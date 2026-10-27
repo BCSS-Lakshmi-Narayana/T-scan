@@ -1,0 +1,683 @@
+{
+ "version": "tg-gazetteer@2026-09-22",
+ "note": "Reference data, not code. District list: the 33 districts of Telangana. Commissionerate and city/locality coverage are APPROXIMATE and must be confirmed against the tenant's own police_config before being relied on for anything beyond narrowing a search; a tenant's district strings are matched through the aliases below. Each entry: id, name, type, districts (the revenue districts it covers), aliases (romanised variants, Telugu, Hindi).",
+ "entries": [
+  {
+   "id": "TG-ADB",
+   "name": "Adilabad",
+   "type": "district",
+   "districts": [
+    "Adilabad"
+   ],
+   "aliases": [
+    "adilabad",
+    "ఆదిలాబాద్",
+    "आदिलाबाद"
+   ]
+  },
+  {
+   "id": "TG-BDK",
+   "name": "Bhadradri Kothagudem",
+   "type": "district",
+   "districts": [
+    "Bhadradri Kothagudem"
+   ],
+   "aliases": [
+    "bhadradri kothagudem",
+    "kothagudem",
+    "bhadradri",
+    "భద్రాద్రి కొత్తగూడెం",
+    "కొత్తగూడెం",
+    "भद्राद्री कोठागुडेम",
+    "कोठागुडेम"
+   ]
+  },
+  {
+   "id": "TG-HNK",
+   "name": "Hanumakonda",
+   "type": "district",
+   "districts": [
+    "Hanumakonda"
+   ],
+   "aliases": [
+    "hanumakonda",
+    "hanamkonda",
+    "hanmakonda",
+    "హనుమకొండ",
+    "హన్మకొండ",
+    "हनुमकोंडा"
+   ]
+  },
+  {
+   "id": "TG-HYD",
+   "name": "Hyderabad",
+   "type": "district",
+   "districts": [
+    "Hyderabad"
+   ],
+   "aliases": [
+    "hyderabad",
+    "hyd",
+    "హైదరాబాద్",
+    "हैदराबाद"
+   ]
+  },
+  {
+   "id": "TG-JGL",
+   "name": "Jagtial",
+   "type": "district",
+   "districts": [
+    "Jagtial"
+   ],
+   "aliases": [
+    "jagtial",
+    "jagityal",
+    "జగిత్యాల",
+    "जगतियाल"
+   ]
+  },
+  {
+   "id": "TG-JGN",
+   "name": "Jangaon",
+   "type": "district",
+   "districts": [
+    "Jangaon"
+   ],
+   "aliases": [
+    "jangaon",
+    "jangoan",
+    "janagama",
+    "జనగామ",
+    "जनगांव"
+   ]
+  },
+  {
+   "id": "TG-JBP",
+   "name": "Jayashankar Bhupalpally",
+   "type": "district",
+   "districts": [
+    "Jayashankar Bhupalpally"
+   ],
+   "aliases": [
+    "jayashankar bhupalpally",
+    "bhupalpally",
+    "bhupalapalli",
+    "భూపాలపల్లి",
+    "जयशंकर भूपालपल्ली",
+    "भूपालपल्ली"
+   ]
+  },
+  {
+   "id": "TG-JGW",
+   "name": "Jogulamba Gadwal",
+   "type": "district",
+   "districts": [
+    "Jogulamba Gadwal"
+   ],
+   "aliases": [
+    "jogulamba gadwal",
+    "gadwal",
+    "గద్వాల",
+    "जोगुलांबा गद्वाल",
+    "गद्वाल"
+   ]
+  },
+  {
+   "id": "TG-KMR",
+   "name": "Kamareddy",
+   "type": "district",
+   "districts": [
+    "Kamareddy"
+   ],
+   "aliases": [
+    "kamareddy",
+    "kamareddi",
+    "కామారెడ్డి",
+    "कामारेड्डी"
+   ]
+  },
+  {
+   "id": "TG-KRN",
+   "name": "Karimnagar",
+   "type": "district",
+   "districts": [
+    "Karimnagar"
+   ],
+   "aliases": [
+    "karimnagar",
+    "kareemnagar",
+    "కరీంనగర్",
+    "करीमनगर"
+   ]
+  },
+  {
+   "id": "TG-KHM",
+   "name": "Khammam",
+   "type": "district",
+   "districts": [
+    "Khammam"
+   ],
+   "aliases": [
+    "khammam",
+    "kammam",
+    "ఖమ్మం",
+    "खम्मम"
+   ]
+  },
+  {
+   "id": "TG-KBA",
+   "name": "Kumuram Bheem Asifabad",
+   "type": "district",
+   "districts": [
+    "Kumuram Bheem Asifabad"
+   ],
+   "aliases": [
+    "kumuram bheem asifabad",
+    "komaram bheem",
+    "asifabad",
+    "ఆసిఫాబాద్",
+    "कुमुरम भीम आसिफाबाद",
+    "आसिफाबाद"
+   ]
+  },
+  {
+   "id": "TG-MHB",
+   "name": "Mahabubabad",
+   "type": "district",
+   "districts": [
+    "Mahabubabad"
+   ],
+   "aliases": [
+    "mahabubabad",
+    "mahbubabad",
+    "మహబూబాబాద్",
+    "महबूबाबाद"
+   ]
+  },
+  {
+   "id": "TG-MBN",
+   "name": "Mahabubnagar",
+   "type": "district",
+   "districts": [
+    "Mahabubnagar"
+   ],
+   "aliases": [
+    "mahabubnagar",
+    "mahbubnagar",
+    "palamuru",
+    "మహబూబ్‌నగర్",
+    "మహబూబ్నగర్",
+    "महबूबनगर"
+   ]
+  },
+  {
+   "id": "TG-MNC",
+   "name": "Mancherial",
+   "type": "district",
+   "districts": [
+    "Mancherial"
+   ],
+   "aliases": [
+    "mancherial",
+    "mancherial",
+    "మంచిర్యాల",
+    "मंचेरियल"
+   ]
+  },
+  {
+   "id": "TG-MDK",
+   "name": "Medak",
+   "type": "district",
+   "districts": [
+    "Medak"
+   ],
+   "aliases": [
+    "medak",
+    "మెదక్",
+    "मेडक"
+   ]
+  },
+  {
+   "id": "TG-MML",
+   "name": "Medchal-Malkajgiri",
+   "type": "district",
+   "districts": [
+    "Medchal-Malkajgiri"
+   ],
+   "aliases": [
+    "medchal-malkajgiri",
+    "medchal malkajgiri",
+    "medchal",
+    "malkajgiri",
+    "మేడ్చల్",
+    "మల్కాజిగిరి",
+    "मेडचल-मलकाजगिरी",
+    "मेडचल",
+    "मलकाजगिरी"
+   ]
+  },
+  {
+   "id": "TG-MLG",
+   "name": "Mulugu",
+   "type": "district",
+   "districts": [
+    "Mulugu"
+   ],
+   "aliases": [
+    "mulugu",
+    "ములుగు",
+    "मुलुगु"
+   ]
+  },
+  {
+   "id": "TG-NGK",
+   "name": "Nagarkurnool",
+   "type": "district",
+   "districts": [
+    "Nagarkurnool"
+   ],
+   "aliases": [
+    "nagarkurnool",
+    "nagar kurnool",
+    "నాగర్‌కర్నూల్",
+    "నాగర్కర్నూల్",
+    "नागरकुर्नूल"
+   ]
+  },
+  {
+   "id": "TG-NLG",
+   "name": "Nalgonda",
+   "type": "district",
+   "districts": [
+    "Nalgonda"
+   ],
+   "aliases": [
+    "nalgonda",
+    "nalgunda",
+    "నల్గొండ",
+    "नलगोंडा"
+   ]
+  },
+  {
+   "id": "TG-NRP",
+   "name": "Narayanpet",
+   "type": "district",
+   "districts": [
+    "Narayanpet"
+   ],
+   "aliases": [
+    "narayanpet",
+    "నారాయణపేట",
+    "नारायणपेट"
+   ]
+  },
+  {
+   "id": "TG-NML",
+   "name": "Nirmal",
+   "type": "district",
+   "districts": [
+    "Nirmal"
+   ],
+   "aliases": [
+    "nirmal",
+    "నిర్మల్",
+    "निर्मल"
+   ]
+  },
+  {
+   "id": "TG-NZB",
+   "name": "Nizamabad",
+   "type": "district",
+   "districts": [
+    "Nizamabad"
+   ],
+   "aliases": [
+    "nizamabad",
+    "nizambad",
+    "నిజామాబాద్",
+    "निज़ामाबाद",
+    "निजामाबाद"
+   ]
+  },
+  {
+   "id": "TG-PDP",
+   "name": "Peddapalli",
+   "type": "district",
+   "districts": [
+    "Peddapalli"
+   ],
+   "aliases": [
+    "peddapalli",
+    "peddapalle",
+    "పెద్దపల్లి",
+    "पेद्दापल्ली"
+   ]
+  },
+  {
+   "id": "TG-RSL",
+   "name": "Rajanna Sircilla",
+   "type": "district",
+   "districts": [
+    "Rajanna Sircilla"
+   ],
+   "aliases": [
+    "rajanna sircilla",
+    "sircilla",
+    "సిరిసిల్ల",
+    "राजन्ना सिरसिला",
+    "सिरसिला"
+   ]
+  },
+  {
+   "id": "TG-RR",
+   "name": "Ranga Reddy",
+   "type": "district",
+   "districts": [
+    "Ranga Reddy"
+   ],
+   "aliases": [
+    "ranga reddy",
+    "rangareddy",
+    "rangareddi",
+    "rr district",
+    "రంగారెడ్డి",
+    "रंगा रेड्डी",
+    "रंगारेड्डी"
+   ]
+  },
+  {
+   "id": "TG-SRD",
+   "name": "Sangareddy",
+   "type": "district",
+   "districts": [
+    "Sangareddy"
+   ],
+   "aliases": [
+    "sangareddy",
+    "sangareddi",
+    "సంగారెడ్డి",
+    "संगारेड्डी"
+   ]
+  },
+  {
+   "id": "TG-SDP",
+   "name": "Siddipet",
+   "type": "district",
+   "districts": [
+    "Siddipet"
+   ],
+   "aliases": [
+    "siddipet",
+    "sidipet",
+    "సిద్దిపేట",
+    "सिद्दीपेट"
+   ]
+  },
+  {
+   "id": "TG-SRP",
+   "name": "Suryapet",
+   "type": "district",
+   "districts": [
+    "Suryapet"
+   ],
+   "aliases": [
+    "suryapet",
+    "suryapeta",
+    "సూర్యాపేట",
+    "सूर्यापेट"
+   ]
+  },
+  {
+   "id": "TG-VKB",
+   "name": "Vikarabad",
+   "type": "district",
+   "districts": [
+    "Vikarabad"
+   ],
+   "aliases": [
+    "vikarabad",
+    "వికారాబాద్",
+    "विकाराबाद"
+   ]
+  },
+  {
+   "id": "TG-WNP",
+   "name": "Wanaparthy",
+   "type": "district",
+   "districts": [
+    "Wanaparthy"
+   ],
+   "aliases": [
+    "wanaparthy",
+    "wanaparthi",
+    "వనపర్తి",
+    "वानापर्थी"
+   ]
+  },
+  {
+   "id": "TG-WGL",
+   "name": "Warangal",
+   "type": "district",
+   "districts": [
+    "Warangal"
+   ],
+   "aliases": [
+    "warangal",
+    "orugallu",
+    "వరంగల్",
+    "वारंगल"
+   ]
+  },
+  {
+   "id": "TG-YBG",
+   "name": "Yadadri Bhuvanagiri",
+   "type": "district",
+   "districts": [
+    "Yadadri Bhuvanagiri"
+   ],
+   "aliases": [
+    "yadadri bhuvanagiri",
+    "bhuvanagiri",
+    "bhongir",
+    "yadadri",
+    "భువనగిరి",
+    "యాదాద్రి",
+    "यादाद्री भुवनगिरी",
+    "भुवनगिरी"
+   ]
+  },
+  {
+   "id": "TG-CP-HYD",
+   "name": "Hyderabad Commissionerate",
+   "type": "commissionerate",
+   "districts": [
+    "Hyderabad"
+   ],
+   "aliases": [
+    "hyderabad commissionerate",
+    "hyderabad city police",
+    "hyderabad cp",
+    "हैदराबाद कमिश्नरेट",
+    "హైదరాబాద్ కమిషనరేట్"
+   ]
+  },
+  {
+   "id": "TG-CP-CYB",
+   "name": "Cyberabad",
+   "type": "commissionerate",
+   "districts": [
+    "Ranga Reddy",
+    "Medchal-Malkajgiri",
+    "Sangareddy"
+   ],
+   "aliases": [
+    "cyberabad",
+    "cyberabad commissionerate",
+    "సైబరాబాద్",
+    "साइबराबाद"
+   ]
+  },
+  {
+   "id": "TG-CP-RCK",
+   "name": "Rachakonda",
+   "type": "commissionerate",
+   "districts": [
+    "Medchal-Malkajgiri",
+    "Ranga Reddy",
+    "Yadadri Bhuvanagiri"
+   ],
+   "aliases": [
+    "rachakonda",
+    "rachakonda commissionerate",
+    "రాచకొండ",
+    "राचकोंडा"
+   ]
+  },
+  {
+   "id": "TG-CP-WGL",
+   "name": "Warangal Commissionerate",
+   "type": "commissionerate",
+   "districts": [
+    "Warangal",
+    "Hanumakonda",
+    "Jangaon"
+   ],
+   "aliases": [
+    "warangal commissionerate",
+    "warangal cp",
+    "वारंगल कमिश्नरेट",
+    "వరంగల్ కమిషనరేట్"
+   ]
+  },
+  {
+   "id": "TG-CP-RGM",
+   "name": "Ramagundam",
+   "type": "commissionerate",
+   "districts": [
+    "Peddapalli",
+    "Mancherial"
+   ],
+   "aliases": [
+    "ramagundam",
+    "ramagundam commissionerate",
+    "రామగుండం",
+    "रामागुंडम"
+   ]
+  },
+  {
+   "id": "TG-CITY-SEC",
+   "name": "Secunderabad",
+   "type": "city",
+   "districts": [
+    "Hyderabad"
+   ],
+   "aliases": [
+    "secunderabad",
+    "sikindrabad",
+    "సికింద్రాబాద్",
+    "सिकंदराबाद"
+   ]
+  },
+  {
+   "id": "TG-CITY-KZP",
+   "name": "Kazipet",
+   "type": "city",
+   "districts": [
+    "Hanumakonda"
+   ],
+   "aliases": [
+    "kazipet",
+    "కాజీపేట",
+    "काजीपेट"
+   ]
+  },
+  {
+   "id": "TG-LOC-CHM",
+   "name": "Charminar",
+   "type": "neighbourhood",
+   "districts": [
+    "Hyderabad"
+   ],
+   "aliases": [
+    "charminar",
+    "old city",
+    "చార్మినార్",
+    "चारमीनार"
+   ]
+  },
+  {
+   "id": "TG-LOC-BJH",
+   "name": "Banjara Hills",
+   "type": "neighbourhood",
+   "districts": [
+    "Hyderabad"
+   ],
+   "aliases": [
+    "banjara hills",
+    "బంజారాహిల్స్",
+    "बंजारा हिल्स"
+   ]
+  },
+  {
+   "id": "TG-LOC-GCB",
+   "name": "Gachibowli",
+   "type": "neighbourhood",
+   "districts": [
+    "Ranga Reddy"
+   ],
+   "aliases": [
+    "gachibowli",
+    "గచ్చిబౌలి",
+    "गचीबौली"
+   ]
+  },
+  {
+   "id": "TG-LOC-KKP",
+   "name": "Kukatpally",
+   "type": "neighbourhood",
+   "districts": [
+    "Medchal-Malkajgiri"
+   ],
+   "aliases": [
+    "kukatpally",
+    "కూకట్‌పల్లి",
+    "కూకట్పల్లి",
+    "कुकटपल्ली"
+   ]
+  },
+  {
+   "id": "IN-TG",
+   "name": "Telangana",
+   "type": "state",
+   "districts": [],
+   "aliases": [
+    "telangana",
+    "తెలంగాణ",
+    "तेलंगाना"
+   ]
+  },
+  {
+   "id": "IN-AP",
+   "name": "Andhra Pradesh",
+   "type": "state",
+   "districts": [],
+   "aliases": [
+    "andhra pradesh",
+    "ఆంధ్రప్రదేశ్",
+    "आंध्र प्रदेश",
+    "आंध्रप्रदेश"
+   ]
+  },
+  {
+   "id": "IN",
+   "name": "India",
+   "type": "country",
+   "districts": [],
+   "aliases": [
+    "india",
+    "భారతదేశం",
+    "भारत"
+   ]
+  }
+ ]
+}

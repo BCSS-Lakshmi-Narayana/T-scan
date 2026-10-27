@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>t-scan Server Requirements</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Palette: cool steel neutrals biased toward the teal accent; amber and red
+     reserved for status, never decoration. Layout: single measured column,
+     spec tables full-bleed within it. */
+  :root {
+    --bg:        #f4f6f7;
+    --surface:   #ffffff;
+    --ink:       #16211f;
+    --ink-soft:  #566662;
+    --line:      #d6dedc;
+    --accent:    #0d6b63;
+    --accent-dim:#e0efed;
+    --warn:      #8a5a00;
+    --warn-bg:   #fdf2dc;
+    --crit:      #9b2822;
+    --crit-bg:   #fbe9e7;
+    --font-display: "IBM Plex Serif", Georgia, serif;
+    --font-body: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:        #101716;
+      --surface:   #18211f;
+      --ink:       #e6edeb;
+      --ink-soft:  #93a5a1;
+      --line:      #2b3936;
+      --accent:    #51c2b5;
+      --accent-dim:#16302d;
+      --warn:      #e0ad52;
+      --warn-bg:   #2e2616;
+      --crit:      #f08b82;
+      --crit-bg:   #331a18;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:        #101716;
+    --surface:   #18211f;
+    --ink:       #e6edeb;
+    --ink-soft:  #93a5a1;
+    --line:      #2b3936;
+    --accent:    #51c2b5;
+    --accent-dim:#16302d;
+    --warn:      #e0ad52;
+    --warn-bg:   #2e2616;
+    --crit:      #f08b82;
+    --crit-bg:   #331a18;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 48px 16px 80px; }
+
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 24px; margin-bottom: 40px; }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 5vw, 42px);
+    line-height: 1.15; margin: 0 0 12px; text-wrap: balance;
+  }
+  .lede { font-size: 17px; color: var(--ink-soft); margin: 0; max-width: 62ch; }
+
+  h2 {
+    font-family: var(--font-display); font-weight: 600; font-size: 23px;
+    margin: 52px 0 6px; text-wrap: balance;
+  }
+  h2 + .sub { color: var(--ink-soft); font-size: 14.5px; margin: 0 0 20px; max-width: 64ch; }
+  h3 { font-size: 15px; font-weight: 600; margin: 28px 0 8px; }
+  p { max-width: 68ch; }
+
+  /* summary tiles */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 28px 0 8px; }
+  .tile {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    padding: 16px 18px; border-top: 3px solid var(--accent);
+  }
+  .tile .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em;
+             text-transform: uppercase; color: var(--ink-soft); margin: 0 0 6px; }
+  .tile .v { font-size: 25px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .tile .n { font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; }
+
+  .tablewrap { overflow-x: auto; margin: 18px 0; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 560px; }
+  th, td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .07em; text-transform: uppercase;
+    color: var(--ink-soft); font-weight: 500; background: var(--bg);
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.num, th.num { font-variant-numeric: tabular-nums; }
+  td strong { font-weight: 600; }
+  code, .mono { font-family: var(--font-mono); font-size: .9em; }
+  code { background: var(--accent-dim); color: var(--ink); padding: 1px 5px; border-radius: 4px; }
+
+  .pill {
+    display: inline-block; font-family: var(--font-mono); font-size: 10.5px; font-weight: 500;
+    letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; white-space: nowrap;
+  }
+  .pill.req  { background: var(--crit-bg);   color: var(--crit); }
+  .pill.rec  { background: var(--warn-bg);   color: var(--warn); }
+  .pill.ok   { background: var(--accent-dim);color: var(--accent); }
+
+  .note {
+    border-left: 3px solid var(--accent); background: var(--surface);
+    padding: 14px 18px; margin: 20px 0; border-radius: 0 6px 6px 0;
+  }
+  .note.warn { border-left-color: var(--warn); }
+  .note.crit { border-left-color: var(--crit); }
+  .note p { margin: 0; font-size: 14.5px; }
+  .note p + p { margin-top: 8px; }
+  .note .lbl {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+    display: block; margin-bottom: 5px; color: var(--accent);
+  }
+  .note.warn .lbl { color: var(--warn); }
+  .note.crit .lbl { color: var(--crit); }
+
+  ul.checks { list-style: none; padding: 0; margin: 16px 0; }
+  ul.checks li {
+    position: relative; padding: 9px 0 9px 30px; border-bottom: 1px solid var(--line); font-size: 14.5px;
+  }
+  ul.checks li:last-child { border-bottom: 0; }
+  ul.checks li::before {
+    content: ""; position: absolute; left: 4px; top: 15px;
+    width: 11px; height: 11px; border: 1.5px solid var(--ink-soft); border-radius: 3px;
+  }
+  footer {
+    margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Infrastructure specification</p>
+  <h1>t-scan — Server Requirements</h1>
+  <p class="lede">Hardware, software and network needed to run the complete application: web interface, API, AI assistant, sentiment analysis and content ingestion. Figures below are measured from the working deployment, not estimated from vendor documentation.</p>
+</header>
+
+<h2>At a glance</h2>
+<p class="sub">One server runs the entire stack. These are the recommended figures; the minimum that has been proven to work is in the table that follows.</p>
+
+<div class="tiles">
+  <div class="tile"><p class="k">GPU memory</p><div class="v">16 GB</div><div class="n">NVIDIA, CUDA 12+</div></div>
+  <div class="tile"><p class="k">System RAM</p><div class="v">64 GB</div><div class="n">32 GB minimum</div></div>
+  <div class="tile"><p class="k">CPU</p><div class="v">16 <span style="font-size:15px;font-weight:500">cores</span></div><div class="n">8 minimum</div></div>
+  <div class="tile"><p class="k">Storage</p><div class="v">500 GB</div><div class="n">NVMe SSD</div></div>
+</div>
+
+<div class="note crit">
+  <span class="lbl">Non-negotiable</span>
+  <p><strong>A dedicated NVIDIA GPU is required.</strong> The AI assistant and the risk-scoring engine both run language models locally. Without a GPU, a question that answers in about one second takes several minutes, and bulk sentiment analysis of incoming posts becomes impractical. This is the single requirement that cannot be worked around.</p>
+</div>
+
+<h2>Specification</h2>
+<p class="sub">The minimum column is not a guess: it is the configuration the application currently runs on and has been demonstrated from.</p>
+
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th>Component</th><th>Minimum (proven)</th><th>Recommended</th><th>Reason</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>GPU</strong><br><span class="pill req">Required</span></td>
+      <td>1 × NVIDIA, <strong>8 GB</strong> VRAM<br><span class="mono" style="color:var(--ink-soft)">e.g. RTX 4060 / 3070</span></td>
+      <td>1 × NVIDIA, <strong>16–24 GB</strong><br><span class="mono" style="color:var(--ink-soft)">RTX 4000 Ada, L4, A10</span></td>
+      <td>The language model occupies 5.5 GB of the 8 GB currently available. That leaves no room for a second model, so the assistant and sentiment engine must share one. 16 GB removes that constraint and roughly triples the number of officers who can query at once.</td>
+    </tr>
+    <tr>
+      <td><strong>CPU</strong></td>
+      <td>8 cores</td>
+      <td>16 cores</td>
+      <td>Five services run concurrently. Content ingestion and text processing are CPU-bound and run alongside user queries.</td>
+    </tr>
+    <tr>
+      <td><strong>RAM</strong></td>
+      <td>32 GB</td>
+      <td>64 GB</td>
+      <td>The sentiment service alone loads three translation and classification models into system memory. 24 GB runs the stack today with little margin.</td>
+    </tr>
+    <tr>
+      <td><strong>Storage</strong></td>
+      <td>250 GB NVMe SSD</td>
+      <td>500 GB NVMe SSD</td>
+      <td>About 48 GB is fixed (see breakdown below). The remainder is growth: collected posts, analysis cache and logs accumulate continuously once ingestion is enabled.</td>
+    </tr>
+    <tr>
+      <td><strong>Operating system</strong></td>
+      <td>Ubuntu 22.04 LTS</td>
+      <td>Ubuntu 22.04 / 24.04 LTS</td>
+      <td>Windows Server also works. Linux is preferred for NVIDIA driver support and unattended restarts.</td>
+    </tr>
+    <tr>
+      <td><strong>Power / UPS</strong></td>
+      <td>—</td>
+      <td>UPS backed</td>
+      <td>Ingestion runs on a schedule; an unclean shutdown mid-analysis requires a manual restart of two services.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Where the storage goes</h2>
+<p class="sub">Measured on the current installation.</p>
+
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Item</th><th class="num">Size</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>AI language models (Ollama)</td><td class="num">5.0 GB</td><td>Two models required: the 7B assistant model and the embedding model</td></tr>
+    <tr><td>Translation &amp; classification models</td><td class="num">12.6 GB</td><td>Telugu/Hindi translation and sentiment classification</td></tr>
+    <tr><td>Application code &amp; dependencies</td><td class="num">11.8 GB</td><td>Four components including their runtime libraries</td></tr>
+    <tr><td>Operating system &amp; drivers</td><td class="num">~20 GB</td><td>Including CUDA toolkit</td></tr>
+    <tr><td><strong>Fixed total</strong></td><td class="num"><strong>~48 GB</strong></td><td>Before any collected data</td></tr>
+    <tr><td>Collected data (current)</td><td class="num">0.35 GB</td><td>9,546 posts, 7,122 search vectors, 4,001 analysed records</td></tr>
+    <tr><td>Growth allowance</td><td class="num">200–450 GB</td><td>Sized for continuous collection across the state</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Database</h2>
+<p class="sub">This is the decision that needs making before the server is ordered, because it affects where the data lives.</p>
+
+<div class="note warn">
+  <span class="lbl">Decision required</span>
+  <p>The application currently uses <strong>MongoDB Atlas</strong>, a managed cloud database, on a shared tier that permits <strong>only three search indexes</strong>. The system has seven collections that would benefit from one, so four currently run on a slower fallback.</p>
+  <p>Two options, and they are not equivalent:</p>
+</div>
+
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Option</th><th>What it means</th><th>Consideration</th></tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>MongoDB Atlas M10+</strong><br><span class="pill ok">Simplest</span></td>
+      <td>Dedicated managed cluster. Lifts the index limit, adds automatic backup and monitoring.</td>
+      <td>Data resides in the cloud provider's data centre. The server needs permanent outbound internet access. Requires the office's public IP to be allowlisted.</td>
+    </tr>
+    <tr>
+      <td><strong>Self-hosted MongoDB</strong><br><span class="pill rec">Data stays on site</span></td>
+      <td>Database runs on the same server or an adjacent one. All data remains within the department's network.</td>
+      <td><strong>Important:</strong> the meaning-based search used by the AI assistant relies on a feature of Atlas. Moving on-premises requires either MongoDB Enterprise with Atlas Search, or a separate vector search component. This is engineering work, not a configuration change — allow time for it.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>If data residency is a requirement from the department's side, raise it now rather than after the server is provisioned.</p>
+
+<h2>Services and ports</h2>
+<p class="sub">All five run on the one server. Only the web interface needs to be reachable by users.</p>
+
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Service</th><th class="num">Port</th><th>Purpose</th><th>Exposure</th></tr></thead>
+  <tbody>
+    <tr><td>Web interface</td><td class="num">3000</td><td>What officers use</td><td>Internal network</td></tr>
+    <tr><td>Application API</td><td class="num">8000</td><td>Business logic, authentication, access control</td><td>Internal network</td></tr>
+    <tr><td>AI assistant</td><td class="num">8100</td><td>Question answering and retrieval</td><td>Localhost only</td></tr>
+    <tr><td>Sentiment &amp; risk</td><td class="num">8003</td><td>Scoring of incoming posts</td><td>Localhost only</td></tr>
+    <tr><td>Model runtime</td><td class="num">11434</td><td>Serves the language models</td><td>Localhost only</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>In production, put the web interface and API behind a reverse proxy on ports 80/443 with a TLS certificate, so officers reach a single address.</p>
+
+<h2>Network access</h2>
+
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Destination</th><th>Purpose</th><th>When</th></tr></thead>
+  <tbody>
+    <tr><td>MongoDB Atlas</td><td>All application data</td><td>Continuous — mandatory if cloud database is chosen</td></tr>
+    <tr><td>Social media data providers</td><td>Collecting posts from X, Instagram, Facebook, YouTube</td><td>Continuous, while ingestion is enabled</td></tr>
+    <tr><td>Telegram</td><td>Channel monitoring</td><td>Continuous, if enabled</td></tr>
+    <tr><td>Model repositories</td><td>Downloading the AI models</td><td>First installation only — can be pre-loaded and the server then run offline</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Outbound HTTPS on port 443 covers all of the above. No inbound access from the internet is required. A <strong>static public IP</strong> is needed if the cloud database is used, so it can be allowlisted.</p>
+
+<h2>Capacity</h2>
+<p class="sub">The language model is the limiting factor, not the database or the network.</p>
+
+<div class="tablewrap">
+<table>
+  <thead><tr><th>GPU memory</th><th>Concurrent assistant users</th><th>Sentiment processing</th></tr></thead>
+  <tbody>
+    <tr><td class="num">8 GB</td><td>5–8 simultaneous questions</td><td>Shares the same model; slows while the assistant is busy</td></tr>
+    <tr><td class="num">16 GB</td><td>15–20 simultaneous questions</td><td>Can run its own model independently</td></tr>
+    <tr><td class="num">24 GB</td><td>25–35 simultaneous questions</td><td>Independent, with room for a larger, more accurate model</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Officers browsing dashboards, alerts and reports do not consume GPU time — only AI assistant questions and the scoring of newly collected posts do. A deployment with 200 officers where 10 are asking questions at any moment sits comfortably within the 16 GB figure.</p>
+
+<h2>Before the server is handed over</h2>
+
+<ul class="checks">
+  <li>NVIDIA driver and CUDA 12 installed, and <code>nvidia-smi</code> reports the GPU</li>
+  <li>Python 3.12 and Node.js 20 LTS installed</li>
+  <li>Outbound HTTPS confirmed to the database and data providers</li>
+  <li>Static public IP assigned and allowlisted on the database, if cloud-hosted</li>
+  <li>Internal DNS name or fixed IP for the server, so officers have one address</li>
+  <li>TLS certificate for that address</li>
+  <li>Services configured to start automatically after a reboot</li>
+  <li>Backup arrangement agreed — automatic with a managed database, to be set up if self-hosted</li>
+  <li>Administrator account on the server for installation and later maintenance</li>
+</ul>
+
+<h2>How the figures were obtained</h2>
+<p>Model memory, disk usage, database size and record counts were measured directly on the running installation. CPU, RAM and storage recommendations add headroom to what that installation uses, since it is a development machine running one tenant. The concurrency figures are projections from the measured per-question cost and the memory a model occupies; they have not been load-tested, and should be treated as planning guidance rather than guarantees.</p>
+
+<footer>
+  t-scan infrastructure specification · Prepared for server provisioning · Figures measured from the working deployment
+</footer>
+
+</div>
+</body>
+</html>

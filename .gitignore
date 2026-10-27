@@ -1,0 +1,72 @@
+# This folder is a deployment artefact, not a source tree. Every .env in it
+# holds live credentials — the database URI, the JWT signing key, the provider
+# API keys. None of it belongs in version control.
+#
+# The patterns below cover DATED AND BACKUP copies too. A plain `.env` rule
+# does not match `.env.bak.20260916143537`, and that file holds the same live
+# credentials as the original.
+.env
+.env.*
+**/.env
+**/.env.*
+
+# ...except the templates, which document which keys exist without holding
+# their values. Check these contain placeholders before the first commit.
+!.env.example
+!**/.env.example
+!.env.sample
+!**/.env.sample
+
+# Anything else that carries a secret.
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+*credentials*.json
+*serviceaccount*.json
+
+# Stray backups. These are how a secret gets committed after the .env rule
+# has already been written.
+*.bak
+*.bak.*
+*.orig
+*~
+
+# Dependencies, shipped with this copy but never committed.
+node_modules/
+**/node_modules/
+.venv/
+**/.venv/
+venv/
+**/venv/
+
+# Regenerated at runtime.
+__pycache__/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+**/.pytest_cache/
+.vector_cache/
+**/.vector_cache/
+.logs/
+**/.logs/
+*.log
+outputs/
+**/outputs/
+.DS_Store
+Thumbs.db
+
+# Built output — rebuild from source instead of committing it.
+frontend/build/
+
+# Model weights and caches. These are gigabytes and come from their own
+# registries; a git repository is the wrong place for them.
+*.safetensors
+*.gguf
+*.bin
+*.pt
+*.pth
+*.npy
+.cache/
+**/.cache/

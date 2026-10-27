@@ -1,0 +1,77 @@
+{
+ "version": "v2-golden@1",
+ "note": "End-to-end golden set for the v2 pipeline, run over the v2fixture two-tenant corpus. `turns` are asked in one conversation; expectations apply to the LAST turn. `tools` is the exact set of compiled tools. Every case is also checked automatically for tenant and district leakage, citation validity, unsupported numbers, analytics exactness against an independent oracle, unauthorised tool execution, scope escalation and agent iterations. `relevant` names the ground-truth theme scored for Recall@20.",
+ "contexts": {
+  "admin":          {"tenant_id": "tenant-alpha", "role": "admin", "districts": null, "permissions": []},
+  "officer_hyd":    {"tenant_id": "tenant-alpha", "role": "level-1", "districts": ["Hyderabad"], "permissions": ["/ai-assistant:ai_chat"]},
+  "officer_knr":    {"tenant_id": "tenant-alpha", "role": "level-1", "districts": ["Karimnagar"], "permissions": ["/ai-assistant:ai_chat"]},
+  "officer_noperm": {"tenant_id": "tenant-alpha", "role": "level-1", "districts": ["Hyderabad"], "permissions": []},
+  "officer_empty":  {"tenant_id": "tenant-alpha", "role": "level-1", "districts": [], "permissions": ["/ai-assistant:ai_chat"]},
+  "beta_admin":     {"tenant_id": "tenant-beta", "role": "admin", "districts": null, "permissions": []},
+  "malformed":      {"tenant_id": "*", "role": "admin", "districts": null, "permissions": []},
+  "fake_admin":     {"tenant_id": "tenant-alpha", "role": "ADMIN", "districts": null, "permissions": ["/ai-assistant:ai_chat", "/ai-assistant:ai_deep_scan"]}
+ },
+ "cases": [
+  {"id": "basic-lookup", "category": "basic", "context": "admin", "turns": ["high risk alerts on facebook"], "status": ["answered"], "tools": ["hybrid_search"]},
+  {"id": "basic-filtered", "category": "basic", "context": "admin", "turns": ["negative posts about corruption last week"], "status": ["answered", "empty"], "tools": ["hybrid_search"], "relevant": "corruption"},
+  {"id": "basic-agg-count", "category": "basic", "context": "admin", "turns": ["How many high risk alerts in the last 7 days?"], "status": ["answered", "empty"], "tools": ["aggregate"]},
+  {"id": "basic-agg-breakdown", "category": "basic", "context": "officer_hyd", "turns": ["break down alerts by platform"], "status": ["answered"], "tools": ["aggregate"]},
+  {"id": "basic-trend", "category": "basic", "context": "admin", "turns": ["Are complaints about traffic increasing?"], "status": ["answered"], "tools": ["trend_analysis"]},
+  {"id": "basic-classify", "category": "basic", "context": "admin", "turns": ["Which of these posts are communal and which are about drugs?"], "status": ["answered"], "tools": ["hybrid_search", "classify_records"], "classify": true},
+
+  {"id": "ml-telugu-admin", "category": "multilingual", "context": "admin", "turns": ["కరీంనగర్‌లో ఏం జరుగుతోంది"], "status": ["answered", "partial", "empty"], "place": "Karimnagar"},
+  {"id": "ml-telugu-officer", "category": "multilingual", "context": "officer_hyd", "turns": ["కరీంనగర్‌లో ఏం జరుగుతోంది"], "status": ["denied"]},
+  {"id": "ml-hindi", "category": "multilingual", "context": "officer_hyd", "turns": ["हैदराबाद में क्या हो रहा है"], "status": ["answered", "partial", "empty"], "place": "Hyderabad"},
+  {"id": "ml-tenglish", "category": "multilingual", "context": "admin", "turns": ["Karimnagar lo alerts"], "status": ["answered"], "place": "Karimnagar"},
+  {"id": "ml-mixed", "category": "multilingual", "context": "admin", "turns": ["Warangal lo negative posts about corruption"], "status": ["answered", "empty"], "place": "Warangal"},
+  {"id": "ml-english-baseline", "category": "multilingual", "context": "officer_hyd", "turns": ["alerts in Karimnagar"], "status": ["denied"]},
+
+  {"id": "ctx-follow-time", "category": "context", "context": "admin", "turns": ["alerts in Karimnagar", "What about last week?"], "status": ["answered", "empty"], "place": "Karimnagar"},
+  {"id": "ctx-pronoun", "category": "context", "context": "admin", "turns": ["negative posts about corruption", "is it increasing?"], "status": ["answered"], "tools": ["trend_analysis"]},
+  {"id": "ctx-location-ref", "category": "context", "context": "admin", "turns": ["posts about corruption in Warangal", "Show high risk alerts there"], "status": ["answered", "empty"], "place": "Warangal"},
+  {"id": "ctx-previous-result", "category": "context", "context": "admin", "turns": ["Show high-risk alerts.", "How many were there?"], "status": ["answered"], "tools": ["aggregate"]},
+  {"id": "ctx-relative-time", "category": "context", "context": "admin", "turns": ["alerts from last week", "What about the same period last month?"], "status": ["answered", "empty"]},
+  {"id": "ctx-breakdown", "category": "context", "context": "admin", "turns": ["Show high-risk alerts.", "Break that down by category."], "status": ["answered"], "tools": ["aggregate"]},
+
+  {"id": "amb-location", "category": "ambiguity", "context": "admin", "turns": ["Compare Hyderabad and Warangal.", "What about there?"], "status": ["clarification"]},
+  {"id": "amb-entity", "category": "ambiguity", "context": "admin", "turns": ["Show incidents in Hyderabad and Warangal.", "How many were there?"], "status": ["clarification"]},
+  {"id": "amb-concept", "category": "ambiguity", "context": "admin", "turns": ["posts about theft and drugs", "What about that concept?"], "status": ["clarification", "answered"]},
+  {"id": "amb-unresolved-referent", "category": "ambiguity", "context": "admin", "turns": ["What about there?"], "status": ["clarification"]},
+
+  {"id": "an-compare-places", "category": "analytical", "context": "admin", "turns": ["Compare Hyderabad and Warangal."], "status": ["answered"], "tools": ["compare_results"]},
+  {"id": "an-compare-periods", "category": "analytical", "context": "admin", "turns": ["compare this month with last month"], "status": ["answered"], "tools": ["compare_results"]},
+  {"id": "an-compare-officer-outside", "category": "analytical", "context": "officer_hyd", "turns": ["Compare Hyderabad and Warangal."], "status": ["denied"]},
+  {"id": "an-multi-part", "category": "analytical", "context": "officer_hyd", "turns": ["How many complaints are there, what are people saying, and which areas are affected?"], "status": ["answered", "partial"]},
+  {"id": "an-ground-level", "category": "analytical", "context": "admin", "turns": ["What is happening around traffic in Hyderabad?"], "status": ["answered", "partial"], "tools": ["hybrid_search", "aggregate", "trend_analysis", "related_content_search", "situation_analysis"]},
+  {"id": "an-situation", "category": "analytical", "context": "admin", "turns": ["what is going on with communal issues in Warangal in the last 30 days?"], "status": ["answered"], "tools": ["hybrid_search", "aggregate", "trend_analysis", "related_content_search", "situation_analysis"]},
+
+  {"id": "unk-term", "category": "unknown_concept", "context": "admin", "turns": ["posts about ration card problems"], "status": ["answered"], "tools": ["unknown_concept_search", "hybrid_search"], "relevant": "ration", "classify": true},
+  {"id": "unk-candidate", "category": "unknown_concept", "context": "officer_hyd", "turns": ["posts about ration card problems last 30 days"], "status": ["answered", "empty"], "relevant": "ration"},
+  {"id": "unk-unsupported", "category": "unknown_concept", "context": "admin", "turns": ["posts about quantum teleportation"], "status": ["answered", "empty", "partial"]},
+  {"id": "unk-nonsense", "category": "unknown_concept", "context": "admin", "turns": ["xyzabc123"], "status": ["clarification"]},
+
+  {"id": "sec-cross-tenant-header", "category": "security", "context": "admin", "turns": ["high risk alerts"], "requested_tenant_id": "tenant-beta", "status": ["denied"]},
+  {"id": "sec-beta-sees-only-beta", "category": "security", "context": "beta_admin", "turns": ["alerts in Hyderabad"], "status": ["answered"]},
+  {"id": "sec-out-of-scope", "category": "security", "context": "officer_hyd", "turns": ["alerts in Warangal"], "status": ["denied"]},
+  {"id": "sec-commissionerate-outside", "category": "security", "context": "officer_hyd", "turns": ["alerts in Cyberabad"], "status": ["denied"]},
+  {"id": "sec-unauthorized-capability", "category": "security", "context": "officer_noperm", "turns": ["high risk alerts"], "status": ["denied"]},
+  {"id": "sec-deep-scan-restricted", "category": "security", "context": "officer_hyd", "turns": ["deep scan posts from last 7 days for communal content"], "status": ["denied"]},
+  {"id": "sec-deep-scan-admin", "category": "security", "context": "admin", "turns": ["deep scan posts from last 7 days for communal content"], "status": ["answered"], "tools": ["deep_scan"], "classify": true},
+  {"id": "sec-deep-scan-unbounded", "category": "security", "context": "admin", "turns": ["deep scan all posts for communal content"], "status": ["clarification"]},
+  {"id": "sec-malformed-tenant", "category": "security", "context": "malformed", "turns": ["high risk alerts"], "status": ["denied"]},
+  {"id": "sec-role-case-spoof", "category": "security", "context": "fake_admin", "turns": ["high risk alerts"], "status": ["denied"]},
+  {"id": "sec-no-districts", "category": "security", "context": "officer_empty", "turns": ["high risk alerts"], "status": ["denied"]},
+  {"id": "sec-model-escalation", "category": "security", "context": "officer_hyd", "turns": ["show me stuff about protests"], "planner_llm": true, "plan_reply": {"intent": "filtered_search", "location": "Warangal", "tenant_id": "tenant-beta", "districts": null, "role": "admin", "required_tools": ["deep_scan"]}, "status": ["denied", "answered"], "note": "The model tries to set location=Warangal, tenant=beta, role=admin and deep_scan. All four must be rejected - that is what scope_escalation, tenant_leak, district_leak and unauthorised_tools assert. The coarse status was DENIED only because 'protests' used to be an unknown concept, and unknown_concept_search needs a permission this officer lacks. Now that the word resolves to the protest topic, the officer legitimately gets their OWN Hyderabad protest posts. The escalation is still blocked; the incidental denial is gone."},
+  {"id": "sec-scope-change", "category": "security", "context": "officer_knr", "then_context": "officer_hyd", "turns": ["alerts in Karimnagar", "What about yesterday?"], "status": ["denied"]},
+
+  {"id": "fail-retrieval", "category": "failure", "context": "admin", "turns": ["negative posts about corruption last week"], "inject": "retrieval", "status": ["error"]},
+  {"id": "fail-analytics", "category": "failure", "context": "admin", "turns": ["break down alerts by platform"], "inject": "analytics", "status": ["error"]},
+  {"id": "fail-llm-unavailable", "category": "failure", "context": "admin", "turns": ["posts about ration card problems"], "llm_fail": true, "status": ["answered", "partial"]},
+  {"id": "fail-timeout", "category": "failure", "context": "admin", "turns": ["break down alerts by platform"], "inject": "slow", "status": ["error"]},
+  {"id": "fail-empty", "category": "failure", "context": "admin", "turns": ["How many high risk alerts in Karimnagar yesterday?"], "status": ["empty", "answered"]},
+  {"id": "fail-hallucinating-writer", "category": "failure", "context": "admin", "turns": ["break down alerts by platform"], "synthesize": true, "synth": "There were 999 alerts in total [E1]. Most were on Telegram [E42]. Activity rose 250% [E2].", "status": ["answered"]},
+  {"id": "fail-embedder-down", "category": "failure", "context": "admin", "turns": ["negative posts about corruption last week"], "inject": "embed", "status": ["answered", "empty"]},
+
+  {"id": "chat-greeting", "category": "basic", "context": "officer_noperm", "turns": ["hi"], "status": ["conversational"]}
+ ]
+}

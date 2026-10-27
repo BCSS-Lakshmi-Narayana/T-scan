@@ -1,0 +1,39 @@
+# Core
+pymongo>=4.6.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+numpy>=1.26.0
+tiktoken>=0.6.0
+tqdm>=4.66.0
+# Unicode-property patterns. The stdlib `re` has no \p{L}\p{M}*, so a Telugu or
+# Hindi word tokenised with \w breaks at every combining mark: "ఎన్ని" became
+# ['ఎన', 'న']. Every layer that counts or matches words needs this.
+regex>=2023.10.3
+
+# API
+fastapi>=0.110.0
+uvicorn>=0.27.0
+
+# Local embedding model (nomic-ai/nomic-embed-text-v1.5)
+# torch is NOT pinned here on purpose: the CUDA build must match the host's
+# driver, and the CPU wheel on PyPI would silently disable GPU embedding.
+# Install it first, from the index matching your CUDA version, e.g.
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+# Verify with: python -c "import torch; print(torch.cuda.is_available())"
+torch>=2.4
+# Pinned below 5.x: Nomic v1.5 loads through trust_remote_code and its
+# modelling code calls ModuleUtilsMixin.get_extended_attention_mask, which
+# transformers 5 removed. The model loads, then every embedding call fails.
+transformers>=4.40,<5
+einops>=0.7            # required by Nomic's trust_remote_code module
+safetensors>=0.4
+huggingface_hub>=0.23
+
+# The osint_portal sub-application is not vendored in this repo. api_server.py
+# mounts it when importable and runs without it otherwise, so its requirements
+# are not pulled in here.
+
+# Tests. test_isolation.py and test_tenant_db.py cover the tenant and district
+# boundaries; they need no MongoDB, no GPU and no model download, so they can
+# run anywhere the source can.
+pytest>=8.0

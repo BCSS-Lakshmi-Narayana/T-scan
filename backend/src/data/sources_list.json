@@ -1,0 +1,3914 @@
+[
+  {
+    "platform": "youtube",
+    "identifier": "@ABUFAISALNEWS",
+    "display_name": "ABU FAISAL NEWS",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Ahnewshyderabad",
+    "display_name": "A H-NEWS",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Sharedeccan786",
+    "display_name": "Sher E Deccan",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@universalboyfarhan3214",
+    "display_name": "Universal Boy Farhan",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@HydBasNaamHiKafiHai",
+    "display_name": "Hyd Bas Naam Hi Kafi Hai",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@hameedakhatoon956",
+    "display_name": "Hameeda Khatoon Family Vlogs",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@yaqubalikhan8632",
+    "display_name": "YAQUB ALI khan",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@reportersubhan7263",
+    "display_name": "REPORTER SUBHAN",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@salmankhanHYC2020",
+    "display_name": "Hyderabad Youth Courage HYC",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@mushtaqmalikhyderabad5980",
+    "display_name": "Mushtaq Malik Official",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@UNOFFICIALRAMBAGTH",
+    "display_name": "UNOFFICIAL RAMBAGTH",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@PARASHURAMTALKS",
+    "display_name": "PARASHURAM TALKS",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@TeluguPopularTV",
+    "display_name": "Telugu Popular TV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@tonenews",
+    "display_name": "Tone News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@rightmedianews",
+    "display_name": "City News 24x7",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@RTVNewsNetwork",
+    "display_name": "RTV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@IndToday",
+    "display_name": "Ind Today",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@SAFATVNEWS",
+    "display_name": "SAFA TV NEWS CHANNEL",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@LegendTVin",
+    "display_name": "Legend TV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@rjkiran_official",
+    "display_name": "RJ KIRAN",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@B9TVTelugu",
+    "display_name": "B9TV Telugu",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@N9MediaTelugu",
+    "display_name": "N9 Media",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@RepublicWorld",
+    "display_name": "Republic World",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Deccandaily",
+    "display_name": "Deccan Daily",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@dialnewsinfo",
+    "display_name": "Dial News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@YRTVTelugu",
+    "display_name": "YR TV Telugu",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@HinduJanaShakti",
+    "display_name": "Hindu Jana Shakti",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@OBCCVideos",
+    "display_name": "OBCC MINISTRY",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@HyderabadDeccanNEWS",
+    "display_name": "Hyderabad Deccan NEWS",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@YOYOTVChannel",
+    "display_name": "YOYO TV Channel",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Chakravu",
+    "display_name": "Chakravu",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@NationalistHub",
+    "display_name": "Nationalist Hub",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "NationalistHub",
+    "display_name": "Nationalist Hub",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "nationalist_hub_channel",
+    "display_name": "Nationalist Hub",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@shanarthitelangana",
+    "display_name": "Shanarthi Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@signaturestudioscity",
+    "display_name": "Signature Studios",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "signaturestudioshyderabad",
+    "display_name": "Signature Studios",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@theavmmedia4358",
+    "display_name": "AVM MEDIA",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@pmrtvtelangana",
+    "display_name": "PMR TV",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@chsambasivarao",
+    "display_name": "CH Sambasiva Rao",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "784296335078575",
+    "display_name": "CHRISTIAN VOICE (UTRC)",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Hyderabad24x7News",
+    "display_name": "Hyderabad 24x7 News",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "hyd24x7news",
+    "display_name": "Hyderabad 24x7 News",
+    "category": "news"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hyderabad24x7news",
+    "display_name": "Hyderabad 24x7 News",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "hyderabad24x7news",
+    "display_name": "Hyderabad 24x7 News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@4tvindia",
+    "display_name": "4tv News Channel",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@TeluguPoliticalAdda",
+    "display_name": "Telugu Political Adda",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@OverseasNews",
+    "display_name": "Overseas News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@YugaTulasiFoundation",
+    "display_name": "Yuga Tulasi Foundation",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@SHIVASHAKTHI",
+    "display_name": "SHIVA SHAKTHI",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@asifbebaaksachnews4010",
+    "display_name": "ASIF BEBAAK SACH NEWS",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@KhalidMehmoodAbbasiOfficial",
+    "display_name": "Khalid Mehmood Abbasi Official",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@ShamSharmaShow",
+    "display_name": "The Sham Sharma Show",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@HamaraPrasadN",
+    "display_name": "Hamara Prasad",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@vsrbreakingnews",
+    "display_name": "vsr breaking news",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@nnews.telangana",
+    "display_name": "N News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@MangoNews",
+    "display_name": "Mango News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@7HNews",
+    "display_name": "7H News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@BharatKiTaraqqiNewsBTNEWS",
+    "display_name": "Bharat Ki Taraqqi News BT NEWS",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@TELANGANASTARSCHANNEL",
+    "display_name": "TELANGANA STARS CHANNEL",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@aimimtak",
+    "display_name": "AIMIM Tak",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@nnmediatrending",
+    "display_name": "NN Media Trending",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@jeedimetlaofficial4794",
+    "display_name": "Jeedimetla official",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "muslimmediastudio",
+    "display_name": "Muslim Media Studio",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "muslimmediastudio",
+    "display_name": "Muslim Media Studio",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@MuslimMediaStudio786",
+    "display_name": "Muslim Media Studio",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@HashtagU",
+    "display_name": "HashtagU",
+    "category": "news"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "shamanews247",
+    "display_name": "SHAMA News",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "tollywoodfilmcitymedia",
+    "display_name": "tfnews",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@SKM91Newsmindia",
+    "display_name": "SKM91News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@SharpIndiansNewsIN",
+    "display_name": "SharpIndiansNews",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@tfcnews",
+    "display_name": "tfcnews",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Shamanews24x7",
+    "display_name": "SHAMA NEWS",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "crimetodaynews",
+    "display_name": "Crime Today News",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "crimetoday.tv",
+    "display_name": "Crime Today News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@crimetodaynewstv",
+    "display_name": "Crime Today News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@QNewsTelangana",
+    "display_name": "Q News Telangana",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@A18TelanganaNews",
+    "display_name": "A18 Telangana News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@News1Telangana",
+    "display_name": "News 1 Telangana",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "News1Telangana",
+    "display_name": "News 1 Telangana",
+    "category": "news"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "news1telangana24x7",
+    "display_name": "News 1 Telangana",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@ahnnewstv",
+    "display_name": "AHN News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@BARQNEWS",
+    "display_name": "BARQ NEWS",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@AadabNews",
+    "display_name": "Aadab News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@ashoksir",
+    "display_name": "Ashoka Academy",
+    "category": "unknown"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@bbnnews",
+    "display_name": "BBN CHANNEL",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@chammakol",
+    "display_name": "Chammakol",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@QubeTVNews",
+    "display_name": "QubeTV News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@pradeepyademofficial4461",
+    "display_name": "pradeep yasam officials",
+    "category": "unknown"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@MounikaSunkara-ShakthiVahini",
+    "display_name": "Mounika Sunkara - Shakthi Vahini",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Adhantelugu",
+    "display_name": "Adhantelugu",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@SachNewsHyd",
+    "display_name": "Sach News",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "sachnewshyd",
+    "display_name": "Sach News",
+    "category": "news"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "sachnews",
+    "display_name": "Sach News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@AimimHussainKhan",
+    "display_name": "AIMIM Hussain Khan",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "AimimHussainKhan",
+    "display_name": "AIMIM Hussain Khan",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "aimim_hussain_khan",
+    "display_name": "AIMIM Hussain Khan",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@SMNews22",
+    "display_name": "SM News",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "SMNEWS",
+    "display_name": "SM News",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "100050497059731",
+    "display_name": "SM News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@TheRealMiyaBhai",
+    "display_name": "Real Miya Bhai",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "realstud.io",
+    "display_name": "Real Miya Bhai",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@ManaTolivelugu",
+    "display_name": "Tolivelugu TV",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "ManaTolivelugu",
+    "display_name": "Tolivelugu TV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@MohammedSohailKhanQuadri",
+    "display_name": "Mohd Sohail Official",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "mohammedsohailkhanquadri",
+    "display_name": "mohammedsohailkhanquadri",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@6TV",
+    "display_name": "6TV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@6TVNews",
+    "display_name": "6TV",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "6tv",
+    "display_name": "6TV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@SNSAZADARILIVE",
+    "display_name": "SNS Azadari",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Rubynews770",
+    "display_name": "Ruby Channel",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "Rubychannelofficial",
+    "display_name": "Ruby Channel",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Muslim_attitude_0786",
+    "display_name": "Muslim attitude 786",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@SecularBharat",
+    "display_name": "Secular Bharat",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "100063620920437",
+    "display_name": "Secular Bharat",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@7200NEWS",
+    "display_name": "7200News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@VSRTelugu",
+    "display_name": "VSR Telugu",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@bnnchannel7824",
+    "display_name": "BNN CHANNEL",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@dvnews6442",
+    "display_name": "DVN News",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "news.dvn",
+    "display_name": "DVN NEWS",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "100063910459734",
+    "display_name": "DVN NEWS",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@tstezznews",
+    "display_name": "TS TEZZ NEWS",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@zrnews1",
+    "display_name": "Zr news & entertainment",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@tasnews327",
+    "display_name": "TAS News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@PioneerTVTelugu",
+    "display_name": "Pioneer TV",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "pioneertvteluguchannel",
+    "display_name": "Pioneer TV",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "PioneerTelugu",
+    "display_name": "Pioneer TV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@z9urdunews8118",
+    "display_name": "Z9 URDU NEWS",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@deccantodaynews8382",
+    "display_name": "Deccan Today News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@G17News",
+    "display_name": "G17 NEWS(OLD CITY TIMES //",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@saiyarshnewstv",
+    "display_name": "Saiyarsh News TV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@rzs24news66",
+    "display_name": "RZS 24 NEWS",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@KMMKHAN",
+    "display_name": "KM M KHAN",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@61crimenews",
+    "display_name": "61 Crime News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@itehadtv2718",
+    "display_name": "Itehad TV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@sinnews2",
+    "display_name": "SIN NEWS 2",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@aimimfanclub4923",
+    "display_name": "AIMIM FAN CAL CLUB",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Oktv_s",
+    "display_name": "OK TV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@hindujagruti",
+    "display_name": "Hindu Janajagruti Samiti",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "jago_hindu_bharat",
+    "display_name": "Hindu Janajagruti Samiti",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "hjshindi1",
+    "display_name": "Hindu Janajagruti Samiti",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@SudarshanNewsTV",
+    "display_name": "Sudarshan News",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "sudarshannews",
+    "display_name": "Sudarshan News",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "SudarshanNewsTV",
+    "display_name": "Sudarshan News",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "sudarshannews",
+    "display_name": "Sudarshan News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@KOTIMAYURESH-GAURAKSHADAL",
+    "display_name": "KOTI MAYURESH (GAU RAKSHA DAL)",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "koti.mayuresh",
+    "display_name": "KOTI MAYURESH (GAU RAKSHA DAL)",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@MirrorTvOfficial",
+    "display_name": "Mirror Tv",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@MicTvNews",
+    "display_name": "Mic Tv News",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "mictvin",
+    "display_name": "Mic Tv News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@NH7V24X7",
+    "display_name": "NH7V",
+    "category": "news"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "nh7v24x7",
+    "display_name": "NH7V",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "NH7V24X7",
+    "display_name": "NH7V",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Etemaaddailyvideos",
+    "display_name": "Etemaad Daily Videos",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@BiabaniBNTnews7559",
+    "display_name": "BiabaniBNT News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@Hydbasnaamhikafihai2.0",
+    "display_name": "Hyd Bas Naam Hi Kafi Hai 2.0",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hyderabaddeccannews",
+    "display_name": "hyderabaddeccannews",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "HyderabadDeccanNews",
+    "display_name": "Hyderabad Deccan News",
+    "category": "news"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "capton_news_hyderabad",
+    "display_name": "capton news hyderabad",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "channel/UCFWWvVawLITxq4zNbROMUxg",
+    "display_name": "capton news hyderabad",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "expressnewshyd1",
+    "display_name": "express news hyderabad",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "expressnewshyderabad0",
+    "display_name": "express news hyderabad",
+    "category": "news"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hyderabaddailynews",
+    "display_name": "hyderabaddailynews",
+    "category": "political"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "mirhyderali",
+    "display_name": "mir hyder ali",
+    "category": "news"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "dvnewshyderabad",
+    "display_name": "dvnewshyderabad",
+    "category": "news"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hyderabad24x7news",
+    "display_name": "hyderabad 24x7 news",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "TaazaVarthalu",
+    "display_name": "Taaza Varthalu",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "V_TalksonX",
+    "display_name": "V Talks",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "HydTimes",
+    "display_name": "Hyderabad Times",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "mirzahyd1",
+    "display_name": "Mirza Hyderabad",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "mk4akbarshareef",
+    "display_name": "Mk4Akbar shareef",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "Varta24Telugu",
+    "display_name": "Varta24 Telugu",
+    "category": "news"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "Varta24Telugu",
+    "display_name": "Varta24 Telugu",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "pakkatelugunewz",
+    "display_name": "Pakka Telugu Media",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "hydnews24",
+    "display_name": "hydnews24",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "bloody_media",
+    "display_name": "Bloody Media",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@RSBNEWS9",
+    "display_name": "RSB NEWS 9",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "kvmkrishtv91",
+    "display_name": "K.V.M. News",
+    "category": "news"
+  },
+  {
+    "platform": "x",
+    "identifier": "@josh_rajy",
+    "display_name": "Rajalaxmi Joshi BJP",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@diggi_tweets",
+    "display_name": "DIGGI",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@raj_kishor16",
+    "display_name": "Raja Kishore BJP",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@HariKrishnaG_",
+    "display_name": "Hari Krishna G",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Ramesh_Saxena",
+    "display_name": "Ramesh Saxena Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RajaSinghJambo",
+    "display_name": "Raja Singh Jambo 1/4",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Yogi4JD",
+    "display_name": "Yogendra Thakur \"Yogi\"",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SatyaVinayak",
+    "display_name": "Satya Vinayak",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KalpanaNR",
+    "display_name": "Kalpana Nernadia Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BJP_Jangaon",
+    "display_name": "Bjp Jangaon Dist",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BJP4Telangana",
+    "display_name": "BJP TELANGANA",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AmarAmar_bjp",
+    "display_name": "Amar Amar Kumar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@kishanreddybjp",
+    "display_name": "K.Kishan Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KTRBRS",
+    "display_name": "KTR",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@P_VamshiReddy",
+    "display_name": "Pagnam Vamshi 2.0",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@HarishReddy_01",
+    "display_name": "Harish Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@sreenath4444",
+    "display_name": "M.sreenath",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MR_BJP_",
+    "display_name": "\"M.R\" _bjp",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PuliTheTiger",
+    "display_name": "Puli The Tiger",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Janardhan_gupta",
+    "display_name": "Janardhan Bhaskar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Kompella_MLatha",
+    "display_name": "Madhavi Latha",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RaghunandanraoM",
+    "display_name": "Raghunandan Rao",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ASrivaniReddy",
+    "display_name": "Akula Srivani Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DHARMA_4_BHARAT",
+    "display_name": "\"D\" \"H\" \"A\" \"R\" \"M\" \"A\"",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KCR_Adda",
+    "display_name": "KCR Adda",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@V6News",
+    "display_name": "V6",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@bandisanjay_bjp",
+    "display_name": "Bandi Sanjay Kumar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ClnsReddy",
+    "display_name": "C.L.N.Sushanth Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@JaiHind_108",
+    "display_name": "JAI HIND",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@JUPPUDIPRASAD",
+    "display_name": "JUPPUDI PRASAD",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ChanderSinghBRS",
+    "display_name": "G.Kishan Chander Singh BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MadanReddy_Bjp",
+    "display_name": "Reddy Gari Madan Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DRGoudbjp",
+    "display_name": "DR.Goud.bjp",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@glaxmananditha",
+    "display_name": "G Laxma Nanditha",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ShaivVristiReddy",
+    "display_name": "Shaiv Vristi Reddy BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BJP4NewIndia",
+    "display_name": "BJP For New India",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Narayanaswamy_",
+    "display_name": "Narayanaswamy Narayanaswamy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KrishnaRao_M",
+    "display_name": "Madhusudan Krishna Rao",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@InduUpadhyay_K",
+    "display_name": "Indu Upadhyay",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PrannaBhaskar",
+    "display_name": "Dumala Pranna Bhaskar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RaoKavitha",
+    "display_name": "Kavitha Kalvakuntla",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SudheerReddyBRS",
+    "display_name": "Dharmala Sudheer Reddy MLA",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@VenugopalReddy_",
+    "display_name": "Enugula Venugopal Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@VidyasagarRao_K",
+    "display_name": "Kalvakuntla Vidyasagar Rao",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Telangana",
+    "display_name": "Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TJS_Sandeep",
+    "display_name": "Sandeep TJS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KhairatabadBRS",
+    "display_name": "Khairatabad BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Johny_JanaSena",
+    "display_name": "Johny",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SujathaGoud_",
+    "display_name": "Sujatha Goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PAWANGOUD_BRS",
+    "display_name": "Pawan Goud BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TelanganaMaa",
+    "display_name": "Telangana Maa",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SureshNayakSeth",
+    "display_name": "Suresh Nayak Seth",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@JaiPower_Lsp",
+    "display_name": "Jai Power",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@gvg_hyd",
+    "display_name": "gvg",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@IndianBloodGroup",
+    "display_name": "Indian Blood Group",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@JohnReddy_Bjp",
+    "display_name": "John Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RajeshSangepuBjp",
+    "display_name": "RajeshSangepuBjp",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@vimalaa_prakala",
+    "display_name": "Vimalaa Mallepaula",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Nitu_BRS",
+    "display_name": "Nitu BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Sreenu99",
+    "display_name": "Sreenu",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BRSparty",
+    "display_name": "BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SonaSreeOfficial",
+    "display_name": "Sona Sree Official",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Madhav_Madhav_",
+    "display_name": "Madhav madhav",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MangalamPKrishna",
+    "display_name": "Managalam P Krishna",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BRS_BRS_BRS",
+    "display_name": "BRS BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PattaVishwaBRS",
+    "display_name": "Patta Vishweshwar Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@NirupKumar_",
+    "display_name": "Nirup Kumar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BJP4Secunderabad",
+    "display_name": "BJP Secunderabad",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PavanKumarBRS",
+    "display_name": "Pavan Kumar BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PraveenPrakash_",
+    "display_name": "Prakash Praveen Goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RSReddyBRS",
+    "display_name": "Ravula Sridhar Reddy BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TJSF_Sircilla",
+    "display_name": "TJSF Sircilla",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RSPraveenKumar",
+    "display_name": "Dr.RS Praveen Kumar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Revanth_Sainyam",
+    "display_name": "@Revanth_Sainyam",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@VikrathGoud_Bjp",
+    "display_name": "Office Of Vikrath Goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ArjunSanghi",
+    "display_name": "Arjun Sanghi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@pappy74",
+    "display_name": "PAPPY PAPPY PAPPY PAPPY PALLI GAJAKRAN",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@VaniGopal_",
+    "display_name": "Vani Gopal",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TJS_STUDENT",
+    "display_name": "TJS STUDENT",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MaheshSriramoju",
+    "display_name": "Mahesh Sriramoju",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Bhadrakali_",
+    "display_name": "Bhadrakali",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@NaveenKumar_",
+    "display_name": "Naveen Kumar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BelladAadi",
+    "display_name": "Bellad Aadi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MeruguRaju_",
+    "display_name": "MERUGU RAJU",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@JaiBheem_",
+    "display_name": "Jai Bheem",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RameshBJP_",
+    "display_name": "RameshBJP",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BJP4India",
+    "display_name": "BJP",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ArvindDharmapuri",
+    "display_name": "Dharmapuri Aravind",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KrishnaGuptaBJP",
+    "display_name": "K.Krishna Gupta",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@VivekVenkataswamy",
+    "display_name": "Vivek Venkataswamy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KondapallyKiran",
+    "display_name": "KONDAPALLY KIRAN",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PremVeeragand",
+    "display_name": "Prem",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@satish_poola",
+    "display_name": "Poola Satish",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SridharGoudBRS",
+    "display_name": "Sridhar Goud BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RSE_RSE_",
+    "display_name": "RSE",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Tharun_pandith",
+    "display_name": "Tharun Pandit",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MaheshBjp_",
+    "display_name": "Mahesh Bjp",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AkhilPatel_",
+    "display_name": "Akhil Patel",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AbhilashReddy_",
+    "display_name": "Abhilash Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PradeepGoud_",
+    "display_name": "Pradeep Goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RamMohanRao_",
+    "display_name": "Ram Mohan Rao",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RahulNellikar",
+    "display_name": "Rahul Nellikar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Sridhar_",
+    "display_name": "Sridhar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SatishChandraJP",
+    "display_name": "Satish Chandra",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KadamVenkatesh",
+    "display_name": "Kadam Venkatesh Madiraj BJP",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@drlaxmanbjp",
+    "display_name": "Dr.Laxman Narayana Kamsar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MSSinha_",
+    "display_name": "M.S.Sinha",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RajinikanthV6",
+    "display_name": "Rajinikanth",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Srinivas_",
+    "display_name": "Srinivas",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KamalPanta_",
+    "display_name": "Kamal Panta",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AamraadSuman90",
+    "display_name": "Aamraad Suman",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BJP4Golkonda",
+    "display_name": "BJP Golkonda",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MusunSitasnshu",
+    "display_name": "Musun Sitasnshu Sheth",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BharathGoud_",
+    "display_name": "Bharath Goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ChanduGoud_",
+    "display_name": "BLACK_TIGER",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SKYadav_",
+    "display_name": "SK Yadav",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RavinderSinghL_",
+    "display_name": "Ravinder Singh Lodi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RajaRam_",
+    "display_name": "Raja Ram",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@A_",
+    "display_name": "A",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ShaileshYadav_",
+    "display_name": "SHAILESH KUMAR YADAV BJYM",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Indra_",
+    "display_name": "Indra",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KUMAR_",
+    "display_name": "KUMAR",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PrasadPoojary_",
+    "display_name": "Prasad Poojary",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MaramGopi_",
+    "display_name": "Maram Gopi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BattuJagan_",
+    "display_name": "Battu Jagan (Jagan)",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@S_",
+    "display_name": "S",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KoppulaSR",
+    "display_name": "Koppula Sumantha Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BalwanV_",
+    "display_name": "Balwan Vishwakarma",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Sreekanth_",
+    "display_name": "Sreekanth",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AvinashA_",
+    "display_name": "Avinash Arramgula",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SaritaO_",
+    "display_name": "SaritaO",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ManneGoud_",
+    "display_name": "Manne (Puli) Goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SriRamVenuSrir",
+    "display_name": "Sri Ram Venu Srir",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ShivaKumarGoud",
+    "display_name": "Shiva Kumar Goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MahenderReddy_",
+    "display_name": "Mahender Reddy (Mamu)",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TeamRameshwar",
+    "display_name": "Team Rameshwar Rao RP",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AnalaSwada",
+    "display_name": "AnalaSwada",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@GovindariB_",
+    "display_name": "Govindari Bandari",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DhanariNagaraj",
+    "display_name": "Dhanari Nagaraj Yadav",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ShivaKumar_",
+    "display_name": "Shiva Kumar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MinaVamshiK",
+    "display_name": "Mina Vamshi Krishna",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SagarBJP",
+    "display_name": "Sagar Goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Shashank_S",
+    "display_name": "Shashank (Sharma S)",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SumanaSV",
+    "display_name": "Sumana Samaveda",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@LingalaAbhilash",
+    "display_name": "Lingala Abhilash Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@UdayKumar_",
+    "display_name": "UdayKumar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TSRajaSingh",
+    "display_name": "T.S.Raja Singh",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DrChigurP",
+    "display_name": "Dr. Chigur Prashanth",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BeingPolitical_",
+    "display_name": "Being Political",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/groups/158147374351178",
+    "display_name": "Raghunandan Rao(nandann rao) followers",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/TelanganaCongress",
+    "display_name": "Telangana Congress",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/DEEPTHY10000066745",
+    "display_name": "DEEPTHY",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/TelanganaArtistForum",
+    "display_name": "Telangana Artist Forum",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/RajaSinghOfficial",
+    "display_name": "T.S.Raja Singh(Rajasingh)",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/INCTelangana",
+    "display_name": "Telangana Congress",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/BJPTelangana",
+    "display_name": "BJP Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/PuliTv.in",
+    "display_name": "Puli Tv.in",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/Telangana10000155857",
+    "display_name": "Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/TelanganaNews",
+    "display_name": "Telangana News",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/ModiSeneWarangal",
+    "display_name": "Modi Sene(army Warangal 387 Constituency",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/JagadishReddyTRS",
+    "display_name": "Jagadish Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/ravinder.gajawela",
+    "display_name": "Ravinder Gajawela",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/BandiSanjayOfficial",
+    "display_name": "Bandi Sanjay",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/BandiSanjayKumar",
+    "display_name": "Bandi Sanjay Kumar",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/BJPMissionTelangana",
+    "display_name": "BJP Mission Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/asrivanireddy",
+    "display_name": "Akula Srivani Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/jakkulalingaiah",
+    "display_name": "Jakkula Lingaiah Yadav",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/JeevanReddyOfficialTRS",
+    "display_name": "Jeevan Reddy MLA",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/gkishanreddy",
+    "display_name": "Kishan Reddy Gangapuram",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/VenkatlaNaleru",
+    "display_name": "Venkatla Naleru",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/anjul.ullahkhan.page",
+    "display_name": "Anjul Ullah Khan",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/KTRTRS",
+    "display_name": "K.T.Rama Rao",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@ToliveluguTV",
+    "display_name": "Tolivelugu TV",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@MojoTVTelugu",
+    "display_name": "Mojo TV(Telugu 5)",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@Mallanna",
+    "display_name": "Mallanna",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@TNewsTelugu",
+    "display_name": "T News Telugu",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@RTVNewsNetwork",
+    "display_name": "RTV",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@TeenmarTakeNews",
+    "display_name": "Teenmar Take News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@abntelugu",
+    "display_name": "ABN News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@V6NewsTelugu",
+    "display_name": "V6 News Telugu",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@RahulTv",
+    "display_name": "Rahul Tv",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@signaturestudioscity",
+    "display_name": "Signature Studios",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@MahaaNews",
+    "display_name": "Mahaa News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@YOYOTVChannel",
+    "display_name": "YOYO TV Channel",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@OKTV_in",
+    "display_name": "OK TV",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@CVRNewsOfficial",
+    "display_name": "CVR News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@TJSNews",
+    "display_name": "TJS News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@MyTvNews",
+    "display_name": "My Tv News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@Prime9News",
+    "display_name": "Prime9 News",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@AIMIM_official",
+    "display_name": "Aimim - All India Majlis E- Ittehadul Muslimeen",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@KCRChannel",
+    "display_name": "KCR Channel",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@shreyindianstvnewsentertainment",
+    "display_name": "Shrey Indians Tv News & Entertainment",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@BHARATNEWS07",
+    "display_name": "BHARAT NEWS",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "https://www.youtube.com/@GTVNewsIndia",
+    "display_name": "GTV News",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Prasad_kpl",
+    "display_name": "KTR Army",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AKASHGOUD_",
+    "display_name": "AKASH GOUD",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Rahul_Goud_55",
+    "display_name": "Rahul",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@NalluCVP",
+    "display_name": "Nallu Cheral Vishnu Puvvu",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SriKanth_",
+    "display_name": "Sri Kanth",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AshokKumarBRS",
+    "display_name": "Ashok Kumar BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ArunkumarSethi",
+    "display_name": "Arunkumar Sethi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KTRTRS",
+    "display_name": "K.T.R",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MadhukarE",
+    "display_name": "Madhukar E Media",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BRSCANADA",
+    "display_name": "BRS CANADA",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@saikirankkdd",
+    "display_name": "Sai Kiran K",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SatishReddyTRS",
+    "display_name": "Satish Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MaheshyadavSethi",
+    "display_name": "Mahesh yadav Sethi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RajeshGL",
+    "display_name": "Rajesh G.L. Shekar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ArjunReddy_",
+    "display_name": "ARJUN REDDY",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@HarishKumarG2",
+    "display_name": "Madhuri (Harish Kumar goud)",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@INCIndia",
+    "display_name": "The Indian National Congress",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@INCTelangana",
+    "display_name": "Telangana Congress",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RahulGandhi",
+    "display_name": "Rahul Gandhi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RGWayanadOffice",
+    "display_name": "Rahul Gandhi - Wayanad",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PChidambaram_IN",
+    "display_name": "P. Chidambaram",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AKAntony",
+    "display_name": "A.K. Antony",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@IYC",
+    "display_name": "Indian Youth Congress",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MahilaCongress",
+    "display_name": "All India Mahila Congress",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@UttamINC",
+    "display_name": "Uttam Kumar Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@VamshiChandReddy",
+    "display_name": "Vamshi Chand Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@revanth_anumula",
+    "display_name": "Revanth Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KomatireddyKVR",
+    "display_name": "Komatireddy Venkat Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PonnalaLaksmaiah",
+    "display_name": "Ponnala Lakshmaiah",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RenukaCCongress",
+    "display_name": "Renuka Chowdhury",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MYaskhi",
+    "display_name": "Madhu Yaskhi Goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Bhatti_Vikramarka",
+    "display_name": "Mallu Bhatti Vikramarka",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BhattiCLP",
+    "display_name": "Bhatti Vikramarka Mallu",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@seethakka",
+    "display_name": "Seethakka",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Geeta_Reddy",
+    "display_name": "Dr. J Geeta Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KVishReddy",
+    "display_name": "Konda Vishweshwar Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TJeevanReddy",
+    "display_name": "T.Jeevan Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@IYCTelangana",
+    "display_name": "Telangana Youth Congress",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KrishnaAllavaru",
+    "display_name": "Krishna Allavaru",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AnshulAvijit",
+    "display_name": "Anshul Avijit",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@sravandasoju",
+    "display_name": "Dr.Sravan Dasoju",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DrRameshNookala",
+    "display_name": "Dr.Ramesh Nookala",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AddankiDayakar",
+    "display_name": "Addanki Dayakar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KarthikReddyINC",
+    "display_name": "Karthik",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ManneSatishINC",
+    "display_name": "Manne Satish Kumar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@IshaqSheikINC",
+    "display_name": "Mohammad Ishaq Sheik",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SaritaO",
+    "display_name": "Sarita Ohat",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DrGaddamVK",
+    "display_name": "Dr.Gaddam Vamsi Krishna",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@QuthbullapurC",
+    "display_name": "Quthbullapur Congress",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RAC_TELANGANA",
+    "display_name": "RAC_TELANGANA",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KonagalaMahesh",
+    "display_name": "Konagala Mahesh",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Alexander1008AJ",
+    "display_name": "B.Alexander(Jonathan The Great",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SureshShetKarat",
+    "display_name": "Suresh Shet Karat",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@tv5newsnow",
+    "display_name": "TV5 News",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@neilsubhray55",
+    "display_name": "Neil Subhray",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@VishalMaheswar",
+    "display_name": "Vishal Maheswar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@dineshyadav",
+    "display_name": "dinesh yadav",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KungFuMistry",
+    "display_name": "Kung Fu Mistry",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DrKKeshavaRao",
+    "display_name": "Dr.K.Keshava Rao",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RaviTeja_",
+    "display_name": "Ravi Teja",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MohdDastagirA",
+    "display_name": "Mohd Dastagir Ahmed",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SumanthReddyBjp",
+    "display_name": "BJP G.K.Sumanth Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@GreaterBRS",
+    "display_name": "BRS Greater Hyderabad",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@voraskr",
+    "display_name": "Shaik Kumar Reddy Vora",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/vani.nagabairava",
+    "display_name": "Vani Nagabairava",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Brs_Kmr",
+    "display_name": "BRS KAMA REDDY",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BJPMissionTS",
+    "display_name": "BJP Mission Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@UshaSethi_",
+    "display_name": "Usha Sethi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RamaRaoBRS",
+    "display_name": "Rama Rao BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MDevenderRao_1",
+    "display_name": "M.Devender Rao",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TelanganaFirst",
+    "display_name": "Telangana First",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DhanariKishore",
+    "display_name": "Dhanari Kishore",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TelanganaNews",
+    "display_name": "Telangana News",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ANILKUMAR_BRS",
+    "display_name": "ANIL KUMAR KUNTA BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PuliDasuSuresh",
+    "display_name": "Puli Dasu Suresh Kumar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TigerRajaT",
+    "display_name": "Tiger Raja Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/PradeshCongressTelangana",
+    "display_name": "Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Gowtham_Goud",
+    "display_name": "Gowtham Pothagoni",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Chantel_",
+    "display_name": "Chantel",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RaniVenkatGoud",
+    "display_name": "rani venkat goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RajuBrsTelangana",
+    "display_name": "BRS RAJU",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KoliDiksha",
+    "display_name": "Koli Diksha",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MChandraReddy2",
+    "display_name": "Mamidi Chandrashekar Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SiniGulabi",
+    "display_name": "Sini Gulabi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@HydSky",
+    "display_name": "Hyd SKY",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DrAnitha_REDDY",
+    "display_name": "Dr. Anitha Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Jublee_Tiger",
+    "display_name": "Jublee Tiger",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Jadav_Balu",
+    "display_name": "Jadav Balu Official",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SampathMadhavL",
+    "display_name": "Sampath Madhav Latha",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PavanKumar_",
+    "display_name": "Pavan Kumar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@VelpulaKTR",
+    "display_name": "VelpulaAbhishekKTR",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BRSTechCell",
+    "display_name": "BRS TechCell",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@GampaMantri",
+    "display_name": "Gampa Mantri",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ThipparapuS",
+    "display_name": "Thipparapu Sankar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KTR_KTR",
+    "display_name": "KTR News",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KTR_News",
+    "display_name": "KTR News",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Juvvi_",
+    "display_name": "Juvvi Nationalist",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@balusuman",
+    "display_name": "Balu Suman",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@qasim_mds",
+    "display_name": "Qasim Periyadi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DrGeddamJhansi",
+    "display_name": "Dr.Geddam Jhansi",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@UllahHym_1",
+    "display_name": "Ullah HYM",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ArunYadav_",
+    "display_name": "Arun Yadav",
+    "category": "political"
+  },
+  {
+    "platform": "facebook",
+    "identifier": "https://www.facebook.com/karunareddy01",
+    "display_name": "Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@NicholaRao",
+    "display_name": "Nichola Rao",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MoteRaviKisha",
+    "display_name": "Mote Ravi Kisha",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PuliNewsTelugu",
+    "display_name": "Puli News",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TelanganaAware",
+    "display_name": "Telangana Aware",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DrGPPanda",
+    "display_name": "DR.GP.Panda",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@UmakayReddy777",
+    "display_name": "Umakay Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SandeepReddyBRS",
+    "display_name": "Sandeep Reddy BRS",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Pandith_Janith",
+    "display_name": "Janithlal Pandith",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Bhanu_Hardyrock",
+    "display_name": "Bhanu_prakash",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Hyderabad_Bird",
+    "display_name": "Hyderabad Bird",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PranhariShastry",
+    "display_name": "PranhariShastry Edulapura",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@VijayVani_",
+    "display_name": "Vijay Vani",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DineshKumarDK",
+    "display_name": "Dinesh Kumar Donga Kumaraswam",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@LaxmiPriyaLBR",
+    "display_name": "CLAA(LBR)",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@KCNP_Telangana",
+    "display_name": "KCNP_Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RavinderReddyBRS",
+    "display_name": "Jai Telangana(BRS) (Telangana na parivar)",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Prajwal_526",
+    "display_name": "Prajwal_526",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RaghavaKTR",
+    "display_name": "Raghava(Ravindra_KTR",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@PurushamLoka",
+    "display_name": "purusham loka",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Hema_Fernandes",
+    "display_name": "FERNANDES(HEMA",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Kethireddy",
+    "display_name": "Kethireddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AnilKumarYadav_",
+    "display_name": "Anil Kumar Yadav (MODI Ka Parivar)",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BRSOfficial",
+    "display_name": "BRS Official",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@JanardhanReddy_R",
+    "display_name": "Janardhan Vijaya Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RaviKumar_BJP",
+    "display_name": "Ravi Kumar Yadav - T.S. (Modi's Ka Parivar)",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "@RGTVTelugu",
+    "display_name": "RG TV Telugu",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ambati_prakasa",
+    "display_name": "ambati",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@BJP_Panduranga",
+    "display_name": "BJP Panduranga",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@mani30",
+    "display_name": "manikant M",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Mohan_",
+    "display_name": "Mohan",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RohithReddyTRS",
+    "display_name": "Mynampally Rohith Reddy MLA",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@NaveenKJ_",
+    "display_name": "Naveen KJ",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@MoinReddy_",
+    "display_name": "Moin Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@gopalpudia",
+    "display_name": "gopalpudia",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Babavala2004",
+    "display_name": "BABA VALA",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DhanpalSuryanar",
+    "display_name": "Dhanpal Suryanarayana",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@TandraSuresh2",
+    "display_name": "Tandra Suresh (Modi Ka Parivar)",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@DrBelemReddy",
+    "display_name": "Dr.Belem Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@VSRReddyBJP",
+    "display_name": "V.S.R.REDDY",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AbhilashDubeyJD",
+    "display_name": "ADV.ABHILASH(J.DUBEY.J.D)",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@Hameed_Ind",
+    "display_name": "Hameed In Mod Modi Ka Parivar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ThummalaS_L",
+    "display_name": "Thummala Sitaram Goud(Ladda (Modi Ka Parivar",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@AnilPatel_",
+    "display_name": "anil Patel",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SanchitGoud1",
+    "display_name": "Sanchit Goud",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SpiritOfCongres",
+    "display_name": "Spirit of Congress",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@RamMohanReddy",
+    "display_name": "Ram Ram Mohan Reddy",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@ArunaTelangana",
+    "display_name": "Aruna Telangana",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@HydLokSabha",
+    "display_name": "Hyderabad Lok Sabha Parliamentary Constituency",
+    "category": "political"
+  },
+  {
+    "platform": "x",
+    "identifier": "@SocialLakker",
+    "display_name": "SOCIAL LAKKER",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "iQ news HD",
+    "display_name": "iQ news HD",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "Tolivelugu TV",
+    "display_name": "Tolivelugu TV",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "ManaTel Telugu",
+    "display_name": "ManaTel Telugu",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "SBN News",
+    "display_name": "SBN News",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "Yuga Thulasi Foundation",
+    "display_name": "Yuga Thulasi Foundation",
+    "category": "political"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "A10 NEWS",
+    "display_name": "A10 NEWS",
+    "category": "news"
+  },
+  {
+    "platform": "youtube",
+    "identifier": "Kanti Tv",
+    "display_name": "Kanti Tv",
+    "category": "news"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "queen_of_sanatani___07",
+    "display_name": "queen_of_sanatani___07",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "maheshhindu_official_214",
+    "display_name": "maheshhindu_official_214",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "salman_khan_hyc",
+    "display_name": "salman_khan_hyc",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "syed_ayub_hyc",
+    "display_name": "syed_ayub_hyc",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "nowinreddy",
+    "display_name": "nowinreddy",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "chikotipraveen444",
+    "display_name": "chikotipraveen444",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "iamnitinnandkar",
+    "display_name": "iamnitinnandkar",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "kalu_singh_offical_",
+    "display_name": "kalu_singh_offical_",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hyd_gaurakshak_deepaksingh",
+    "display_name": "hyd_gaurakshak_deepaksingh",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "_funny_boy_ganesh_",
+    "display_name": "_funny_boy_ganesh_",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hss_1.o",
+    "display_name": "hss_1.o",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "savetelangana_savetemples",
+    "display_name": "savetelangana_savetemples",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "n.r.g.official",
+    "display_name": "n.r.g.official",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "killbillpandey44",
+    "display_name": "killbillpandey44",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "arvind_kompally",
+    "display_name": "arvind_kompally",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "ladduyadavbjp",
+    "display_name": "ladduyadavbjp",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "praveengoud_marapally",
+    "display_name": "praveengoud_marapally",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "unknown_sanghi",
+    "display_name": "unknown_sanghi",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "kattar_hindu_shivahari",
+    "display_name": "kattar_hindu_shivahari",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "wesupportbajrangdal",
+    "display_name": "wesupportbajrangdal",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "_telugu_sanatani__",
+    "display_name": "_telugu_sanatani__",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "karatekalyani",
+    "display_name": "karatekalyani",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hindumlarajasingh",
+    "display_name": "hindumlarajasingh",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "trajasinghoffice",
+    "display_name": "trajasinghoffice",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "ramallenki",
+    "display_name": "ramallenki",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "dhoolpet_creativity",
+    "display_name": "dhoolpet_creativity",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "rabi_ahmed_khan",
+    "display_name": "rabi_ahmed_khan",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "sirivennelagoud",
+    "display_name": "sirivennelagoud",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "mr__basha__11",
+    "display_name": "mr__basha__11",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "bajrangdal_sai_yadav",
+    "display_name": "bajrangdal_sai_yadav",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "tejaswimedia",
+    "display_name": "tejaswimedia",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "mission_bhagyanagar",
+    "display_name": "mission_bhagyanagar",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "akhandhindurashtrasena_1408",
+    "display_name": "akhandhindurashtrasena_1408",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "aimplb_official",
+    "display_name": "aimplb_official",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hindu_yuva._sena_",
+    "display_name": "hindu_yuva._sena_",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "reportersubhan",
+    "display_name": "reportersubhan",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "kumar_hjs",
+    "display_name": "kumar_hjs",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "puralocal",
+    "display_name": "puralocal",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "inquilabhyderabad",
+    "display_name": "inquilabhyderabad",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "bajrangdal_nrpt",
+    "display_name": "bajrangdal_nrpt",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "imran.khan.kyc",
+    "display_name": "imran.khan.kyc",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "_real_miya_bhai_",
+    "display_name": "_real_miya_bhai_",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "_sabbineni",
+    "display_name": "_sabbineni",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "bharatavarsha4u",
+    "display_name": "bharatavarsha4u",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "mounikasunkaras",
+    "display_name": "mounikasunkaras",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "ram_yadav_ar",
+    "display_name": "ram_yadav_ar",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "vishal.bajrangdal",
+    "display_name": "vishal.bajrangdal",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "tigar_rajasingh",
+    "display_name": "tigar_rajasingh",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hyderabad_top_news",
+    "display_name": "hyderabad_top_news",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "kshatriya_sandeepsagar",
+    "display_name": "kshatriya_sandeepsagar",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "rashtriya_vaanarasena",
+    "display_name": "rashtriya_vaanarasena",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "bajrang_dal_uday",
+    "display_name": "bajrang_dal_uday",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "nani_dharma_yodha_8389",
+    "display_name": "nani_dharma_yodha_8389",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "team_prashna",
+    "display_name": "team_prashna",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "srinathkarnati",
+    "display_name": "srinathkarnati",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "rameshji_hindu",
+    "display_name": "rameshji_hindu",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "_wake_up_hindus__",
+    "display_name": "_wake_up_hindus__",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "akramulhaqueofficial",
+    "display_name": "akramulhaqueofficial",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "bjymtelanganaofficial",
+    "display_name": "bjymtelanganaofficial",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "sanatana_sodarudu_100",
+    "display_name": "sanatana_sodarudu_100",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hindu.track",
+    "display_name": "hindu.track",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hindunewstelugu",
+    "display_name": "hindunewstelugu",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "narsimha.hindu.9",
+    "display_name": "narsimha.hindu.9",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "mohdshakir397",
+    "display_name": "mohdshakir397",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "radhamanohardas",
+    "display_name": "radhamanohardas",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "adithyaparasri_swamy",
+    "display_name": "adithyaparasri_swamy",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "shivashakthi1",
+    "display_name": "shivashakthi1",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "imluckysuresh",
+    "display_name": "imluckysuresh",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "wisetv_digital",
+    "display_name": "wisetv_digital",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "nrathankumar",
+    "display_name": "nrathankumar",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "imanohara93",
+    "display_name": "imanohara93",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "ravinuthala_shashidhar",
+    "display_name": "ravinuthala_shashidhar",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "srisrishankarswamiji",
+    "display_name": "srisrishankarswamiji",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "forefront_bharat",
+    "display_name": "forefront_bharat",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "dr.saichandraortho",
+    "display_name": "dr.saichandraortho",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "i.m.akshay9",
+    "display_name": "i.m.akshay9",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "journalistsiddhu",
+    "display_name": "journalistsiddhu",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "karunasagarllb",
+    "display_name": "karunasagarllb",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "chinthalnagraj_1",
+    "display_name": "chinthalnagraj_1",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "muzammil_hyderabad",
+    "display_name": "muzammil_hyderabad",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "hyc_official2020",
+    "display_name": "hyc_official2020",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "local_chanty__official",
+    "display_name": "local_chanty__official",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "naveen_hinduu",
+    "display_name": "naveen_hinduu",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "vishalsonu89",
+    "display_name": "vishalsonu89",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "sidhesh_hindu",
+    "display_name": "sidhesh_hindu",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "reflection_channel",
+    "display_name": "reflection_channel",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "aaryan_mudiraj07",
+    "display_name": "aaryan_mudiraj07",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "ab_maddisetty",
+    "display_name": "ab_maddisetty",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "mr__james_official__",
+    "display_name": "mr__james_official__",
+    "category": "unknown"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "green_mango_shillong",
+    "display_name": "green_mango_shillong",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "marzu_14",
+    "display_name": "marzu_14",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "josaf_john_44",
+    "display_name": "josaf_john_44",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "weedhumor",
+    "display_name": "weedhumor",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "freakyfahed01",
+    "display_name": "freakyfahed01",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "high.on.weed",
+    "display_name": "high.on.weed",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "neged.u",
+    "display_name": "neged.u",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "angrybird__666",
+    "display_name": "angrybird__666",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "king_good_boy7860",
+    "display_name": "king_good_boy7860",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "infinity_star_001",
+    "display_name": "infinity_star_001",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "ananthu_smokie",
+    "display_name": "ananthu_smokie",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "musaking_99",
+    "display_name": "musaking_99",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "green_spotmanipur",
+    "display_name": "green_spotmanipur",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "_no_love_only_kiss_",
+    "display_name": "_no_love_only_kiss_",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "jeams9008",
+    "display_name": "jeams9008",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "ramanbhola1998",
+    "display_name": "ramanbhola1998",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "mc.ston4",
+    "display_name": "mc.ston4",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "find_me_drak_666",
+    "display_name": "find_me_drak_666",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "jack_stuff_01",
+    "display_name": "jack_stuff_01",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "herbhaven.khi",
+    "display_name": "herbhaven.khi",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "joy.james4",
+    "display_name": "joy.james4",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "jordan77275",
+    "display_name": "jordan77275",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "secretgarden_gk416",
+    "display_name": "secretgarden_gk416",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "calistrainbae",
+    "display_name": "calistrainbae",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "gaze_lle411",
+    "display_name": "gaze_lle411",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "i_m_back_78600",
+    "display_name": "i_m_back_78600",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "greens24x7",
+    "display_name": "greens24x7",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "stayp_ositive420",
+    "display_name": "stayp_ositive420",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "vishal_paddler",
+    "display_name": "vishal_paddler",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "sisteravail",
+    "display_name": "sisteravail",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "escobar.bhai",
+    "display_name": "escobar.bhai",
+    "category": "narcotics"
+  },
+  {
+    "platform": "instagram",
+    "identifier": "doctorblazelucknow",
+    "display_name": "doctorblazelucknow",
+    "category": "narcotics"
+  }
+]

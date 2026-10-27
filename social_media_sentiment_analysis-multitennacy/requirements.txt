@@ -1,0 +1,56 @@
+# IMPORTANT: transformers is PINNED. IndicTrans2's custom remote code
+# (trust_remote_code=True) imports `transformers.onnx` (removed in v5) and
+# expects the legacy tuple-based `past_key_values` KV cache (replaced by the
+# new Cache API in newer 4.5x releases). Verified working: 4.40.x.
+transformers==4.40.2
+tokenizers>=0.19,<0.20
+torch>=2.1
+scikit-learn>=1.4
+matplotlib>=3.8
+pandas>=2.1
+numpy>=1.26
+psutil>=5.9
+langdetect>=1.0.9
+lingua-language-detector>=2.0
+tqdm>=4.66
+sacrebleu>=2.4
+sentencepiece>=0.2
+accelerate>=0.28
+IndicTransToolkit>=1.0 ; python_version < "3.14"
+# TensorFlow-free Indic NLP fork maintained for IndicTransToolkit/IndicTrans2.
+# It embeds the Urdu normalizer that the original package imports from
+# `urduhack`. Do not install `indic-nlp-library` alongside it: both distributions
+# own the same `indicnlp` module paths, so install order can silently restore the
+# TensorFlow-based Urdu import and break `urd_Arab` preprocessing.
+indic-nlp-library-itt==0.1.1
+# Optional — enables COMET / CometKiwi translation quality scores (heavy install;
+# CometKiwi is additionally a gated HuggingFace model requiring `huggingface-cli login`):
+# unbabel-comet>=2.2
+
+# HTTP service (api_server.py) — exposes the production pipeline for SOCKEYE's
+# backend (SENTIMENT_ANALYSIS=CUSTOM).
+fastapi>=0.110.0
+uvicorn>=0.27.0
+python-dotenv>=1.0.0
+
+# Intelligence layer (src/intelligence.py) — HTTP client for the vLLM OpenAI-
+# compatible host named by VLLM_BASE_URL. Already present transitively via huggingface_hub;
+# pinned explicitly because this module imports it directly.
+requests>=2.31.0
+
+# Romanized-Indic transliteration (src/transliteration.py) — IndicXlit, loaded
+# directly via fairseq (NOT the `ai4bharat-transliteration` PyPI wrapper: it
+# unconditionally imports urduhack -> tensorflow, which segfaults in this
+# process once torch/transformers are already loaded — confirmed by testing).
+# Plain PyPI `fairseq` fails to build on Python >=3.12 (its setup.py needs
+# `distutils`, removed from the stdlib); fairseq-fixed is a community fork
+# that ships a working prebuilt wheel and is otherwise drop-in (same `fairseq`
+# import name).
+fairseq-fixed>=0.12.3.1 ; python_version >= "3.12"
+fairseq>=0.12.2 ; python_version < "3.12"
+
+# Roman-script language ID (src/lid_roman.py) — AI4Bharat IndicLID-FTR,
+# distinguishes romanized Indic text from genuine English. Plain `fasttext`
+# has no prebuilt wheels for recent Python; fasttext-wheel is the same
+# library, just pre-built.
+fasttext-wheel>=0.9.2
