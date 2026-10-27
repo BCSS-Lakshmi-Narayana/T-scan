@@ -37,3 +37,4 @@ huggingface_hub>=0.23
 # boundaries; they need no MongoDB, no GPU and no model download, so they can
 # run anywhere the source can.
 pytest>=8.0
+httpx2>=2.16        # starlette 1.10+ TestClient; test-only

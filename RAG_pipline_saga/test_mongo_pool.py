@@ -126,7 +126,15 @@ def test_reset_forgets_without_closing():
     mongo_pool.reset()
     # Not closed: still usable by whoever holds it. This is what makes a
     # caller's own close() safe.
-    assert first.address is None or True          # touching it must not raise
+    #
+    # Read a property that needs NO server. `.address` looked like the obvious
+    # check and is not: it performs server selection, so the test passed only
+    # on a machine with a mongod on localhost and failed on the deployment
+    # server with a connection refused -- reporting the pool as broken when
+    # what was wrong was the test reaching for the network to answer a
+    # question about an object's lifetime.
+    assert first.options is not None
+    assert first.topology_description is not None
     assert mongo_pool.stats()["live"] == 0
 
 
