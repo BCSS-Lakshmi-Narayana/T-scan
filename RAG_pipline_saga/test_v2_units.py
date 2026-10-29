@@ -972,3 +972,120 @@ class TestGroundedSynthesis:
         import re as _re
         for literal in ("3,087", "3087", "in the last 7 days"):
             assert literal not in respond._SYNTHESIS_PROMPT
+
+
+# =========================================================================== #
+# a sentence about what people are discussing must be backed by what it cites
+# =========================================================================== #
+
+class TestThemeClaimsNeedSupport:
+    """The water-supply answer that described noise pollution.
+
+    Live question: "what are people complaining about regarding water supply".
+    The evidence was a total (120) and sixteen posts about water. The summary
+    said the largest complaint groups were noise pollution at political meetings
+    and sound pollution from mosques. It named no number and no table row, so
+    nothing checked it.
+    """
+
+    WATER = _ev(2, content="Alert: Seek public opinion on water-sharing. The text presents "
+                           "a neutral question about the sharing of river water between states.")
+    DAM = _ev(5, content="Alert: Cause panic. The post falsely claims the Osman Sagar dam "
+                         "has collapsed and warns of flooding.")
+    NOISE = _ev(7, content="Alert: Express dissatisfaction. Residents object to loudspeaker "
+                           "noise during political meetings and road shows.")
+
+    def _total(self):
+        return _ev(1, source_type="aggregate", tool=C.AGGREGATE, content="120 matching records",
+                   facts={"total": 120, "measure": "matching records"})
+
+    BAD = ("The largest observed complaint groups are related to noise pollution during "
+           "political meetings and road shows, as well as sound pollution from mosques")
+
+    def test_the_live_sentence_citing_only_a_total_is_struck(self):
+        evs = [self._total(), self.WATER, self.DAM]
+        cleaned, removed = respond.check_claims(self.BAD + " [E1].", evs, themes=True)
+        assert cleaned == "" and removed == 1
+
+    def test_the_same_sentence_with_no_citation_is_struck(self):
+        evs = [self._total(), self.WATER, self.DAM]
+        cleaned, removed = respond.check_claims(self.BAD + ".", evs, themes=True)
+        assert cleaned == "" and removed == 1
+
+    def test_the_same_sentence_citing_records_about_water_is_struck(self):
+        evs = [self._total(), self.WATER, self.DAM]
+        cleaned, removed = respond.check_claims(self.BAD + " [E2, E5].", evs, themes=True)
+        assert cleaned == "" and removed == 1
+
+    def test_a_theme_the_cited_records_actually_state_is_kept(self):
+        evs = [self._total(), self.WATER, self.DAM]
+        text = "People are discussing the sharing of river water and a false report about the Osman Sagar dam [E2, E5]."
+        cleaned, removed = respond.check_claims(text, evs, themes=True)
+        assert removed == 0 and "river water" in cleaned
+
+    def test_noise_complaints_are_kept_when_a_record_really_says_so(self):
+        """The rule checks support, not subject. The same words are fine when true."""
+        evs = [self._total(), self.NOISE]
+        text = "Some posts object to loudspeaker noise during political meetings [E7]."
+        cleaned, removed = respond.check_claims(text, evs, themes=True)
+        assert removed == 0 and cleaned
+
+    def test_a_plain_count_sentence_is_untouched(self):
+        evs = [self._total()]
+        cleaned, removed = respond.check_claims(
+            "The monitored scope contains 120 matching records [E1].", evs)
+        assert removed == 0 and "120" in cleaned
+
+    def test_a_breakdown_table_claim_still_goes_through_the_table_check(self):
+        table = _ev(3, source_type="aggregate", tool=C.AGGREGATE, content="by topics",
+                    facts={"group_by": "topics", "rows": [
+                        {"value": "murder", "count": 86}, {"value": "protest", "count": 39}]})
+        text = "The largest observed topic groups are murder (86) and protest (39) [E3]."
+        cleaned, removed = respond.check_claims(text, [table], themes=True)
+        assert removed == 0 and "murder" in cleaned
+
+    def test_telugu_words_are_matched_not_dropped(self):
+        telugu = _ev(4, content="\u0c35\u0c3e\u0c1f\u0c30\u0c4d \u0c38\u0c2a\u0c4d\u0c32\u0c48 "
+                                "\u0c38\u0c2e\u0c38\u0c4d\u0c2f \u0c2a\u0c4d\u0c30\u0c1c\u0c32\u0c41 "
+                                "\u0c2b\u0c3f\u0c30\u0c4d\u0c2f\u0c3e\u0c26\u0c41")
+        text = "\u0c2a\u0c4d\u0c30\u0c1c\u0c32\u0c41 \u0c38\u0c2e\u0c38\u0c4d\u0c2f \u0c2b\u0c3f\u0c30\u0c4d\u0c2f\u0c3e\u0c26\u0c41 [E4]."
+        cleaned, removed = respond.check_claims("Complaints: " + text, [telugu], themes=True)
+        assert removed == 0
+
+    def test_the_prompt_asks_for_cited_support(self):
+        assert "cite the" in respond._SYNTHESIS_PROMPT and "specific records" in respond._SYNTHESIS_PROMPT
+        assert "specific records" in respond._RETRY_NOTE
+        assert respond.PROMPT_VERSION == "respond@v3"
+
+
+
+    def test_the_rule_is_off_by_default_so_template_text_is_not_judged(self):
+        """The template answer is built by code from the evidence. The golden
+        harness runs check_claims over it to count unsupported NUMBERS; a theme
+        rule there flagged the template's own wording as unsupported."""
+        evs = [self._total(), self.WATER]
+        cleaned, removed = respond.check_claims(self.BAD + " [E1].", evs)
+        assert removed == 0
+
+    def test_the_model_prose_path_turns_it_on(self):
+        import inspect
+        src = inspect.getsource(respond.build)
+        assert "themes=True" in src
+
+
+class TestGroupedCitations:
+    def test_single_and_grouped_forms_are_read(self):
+        assert respond._cite_ids("a [E1]. b [E2, E5]. c [E3, 4].") == ["E1", "E2", "E5", "E3", "E4"]
+
+    def test_text_without_citations_yields_none(self):
+        assert respond._cite_ids("no citation here, though E2 and [not E3] appear") == []
+
+    def test_a_grouped_citation_to_an_unknown_item_is_still_struck(self):
+        ev = _ev(1, source_type="aggregate", tool=C.AGGREGATE, content="12 records",
+                 facts={"total": 12, "measure": "matching records"})
+        cleaned, removed = respond.check_claims("There are 12 matching records [E1, E9].", [ev])
+        assert cleaned == "" and removed == 1
+
+    def test_the_cited_set_in_the_response_includes_grouped_ids(self):
+        # response.citations is built from the text; a grouped citation was dropped.
+        assert set(respond._cite_ids("x [E2, E5] y [E7]")) == {"E2", "E5", "E7"}

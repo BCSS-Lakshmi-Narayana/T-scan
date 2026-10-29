@@ -28,8 +28,22 @@ from query_understanding.models import Intent, QueryPlan, TimeKind
 from .models import (AssistantResponse, Citation, Evidence, ExecutionPlan,
                      VerificationReport)
 
-PROMPT_VERSION = "respond@v2"   # v2: semantic guards - records are not incidents
+PROMPT_VERSION = "respond@v3"   # v3: a theme claim must cite records that say it
 _CITE = re.compile(r"\[(E\d+)\]")
+# A citation may name several items: "[E2, E5]" or "[E2, 5]". The page already
+# reads that form; the checker did not, so a sentence citing two records looked
+# like one citing nothing.
+_CITE_GROUP = re.compile(r"\[\s*(E\d+(?:\s*,\s*E?\d+)*)\s*\]", re.I)
+
+
+def _cite_ids(text: str) -> List[str]:
+    """Every evidence id cited in `text`, whether written singly or grouped."""
+    ids: List[str] = []
+    for group in _CITE_GROUP.findall(text or ""):
+        for part in re.split(r"\s*,\s*", group):
+            part = part.strip().upper()
+            ids.append(part if part.startswith("E") else "E" + part)
+    return ids
 _NUM = re.compile(r"(?<![\w.])[-+]?\d+(?:[.,]\d+)?%?")
 _SENT = re.compile(r"(?<=[.!?])\s+|\n+")
 _ENUM = re.compile(r"(?m)^\s*\d{1,3}[.)]\s+")
@@ -119,9 +133,78 @@ _WINDOW = re.compile(
     r"|this year|last year)\b", re.I)
 
 
+#: A sentence that says what people are discussing, complaining about, or what
+#: the recurring themes are -- a claim about CONTENT, as opposed to a count.
+_THEME_CLAIM = re.compile(
+    r"\b(?:groups?|themes?|topics?|categor(?:y|ies)|complain\w*|issues?|concerns?"
+    r"|grievances?|discuss\w*|talk\w*|mention\w*)\b", re.I)
+
+#: Words that are the answer's own scaffolding, not subject matter. "The largest
+#: observed complaint groups are ..." says nothing about WHAT the complaints are;
+#: only the words that remain are claims a post could support or contradict.
+_SCAFFOLD = frozenset("""
+largest observed groups group themes theme topics topic category categories complaint
+complaints complaining related relate mainly largely primarily include includes including
+scope monitored records record matching posts post people about regarding also well their
+these those that this with from have been were which under among other most more many
+several indicates indicate increased content activity volume distinct incidents count
+there than some such into over within against between around while where what when being
+across various different public issues issue concerns concern grievances grievance
+discussed discussion mentioned mentions mention talking talk
+""".split())
+
+_WORD = re.compile(r"[^\s\[\]().,;:!?\"'“”‘’/\\|-]+")
+
+
+def _subject_words(text: str) -> set:
+    """The words in `text` that carry subject matter, as 5-letter stems.
+
+    Stems so "complaining" meets "complaints" and "meetings" meets "meeting";
+    split on whitespace and punctuation rather than on letters so Telugu and
+    Hindi words, whose combining marks are not "word characters" to Python's
+    regex, stay whole.
+    """
+    out = set()
+    for m in _WORD.findall(_CITE_GROUP.sub("", text or "")):
+        w = m.lower()
+        if len(w) >= 4 and not w.isdigit() and w not in _SCAFFOLD:
+            out.add(w[:5])
+    return out
+
+
+def _supports_theme_claim(sent: str, cited: List[Evidence]) -> bool:
+    """Does what this sentence CITES actually say what the sentence claims?
+
+    Found when a question about water supply was answered with "the largest
+    complaint groups are noise pollution during political meetings and
+    sound pollution from mosques". The evidence was a total and sixteen posts
+    about water. The sentence named no number and no table row, so nothing
+    checked it, and the officer read an invented grievance as the finding.
+    """
+    # A total ("120 matching records") says nothing about what is in them.
+    sources = [e for e in cited
+               if not (e.source_type == "aggregate" and not e.facts.get("rows"))]
+    words = _subject_words(sent)
+    if not words:
+        return True
+    if not sources:
+        return False
+    pool: set = set()
+    for e in sources:
+        pool |= _subject_words(e.content)
+        pool |= _subject_words(str(e.facts))
+    return len(words & pool) >= max(1, len(words) / 2)
+
+
 def check_claims(text: str, evidence: List[Evidence], question: str = "",
-                 scope: Optional[str] = None) -> Tuple[str, int]:
+                 scope: Optional[str] = None, themes: bool = False) -> Tuple[str, int]:
     """(cleaned text, sentences removed).
+
+    `themes` turns on the check that a sentence about what people are discussing
+    is backed by the records it cites. It is for prose a MODEL wrote. The
+    template answer is assembled by code from the evidence, so every line of it
+    is supported by construction; running the check over it only flags the
+    template's own wording ("N related records share a theme").
 
     A number is checked against the evidence the SENTENCE CITES, not against
     every number anywhere in the evidence set. Under the looser rule a theme
@@ -144,13 +227,13 @@ def check_claims(text: str, evidence: List[Evidence], question: str = "",
     for sent in _SENT.split(text.strip()):
         if not sent.strip():
             continue
-        cites = _CITE.findall(sent)
+        cites = _cite_ids(sent)
         if any(c not in by_id for c in cites):
             removed += 1
             continue
         cited = [by_id[c] for c in cites]
         nums = []
-        for n in _NUM.findall(_CITE.sub("", sent)):
+        for n in _NUM.findall(_CITE_GROUP.sub("", sent)):
             try:
                 nums.append(float(n.rstrip("%").replace(",", "")))
             except ValueError:
@@ -174,6 +257,11 @@ def check_claims(text: str, evidence: List[Evidence], question: str = "",
             if not any(v in low for e in tables for v in _row_values(e)):
                 removed += 1
                 continue
+        # A sentence about what people are discussing must be backed by the
+        # records it cites. (A breakdown table is handled by the check above.)
+        if themes and not tables and _THEME_CLAIM.search(sent) and not _supports_theme_claim(sent, cited):
+            removed += 1
+            continue
         kept.append(sent)
     return " ".join(kept).strip(), removed
 
@@ -453,6 +541,10 @@ RULES:
    limitation instead of treating every record as a local incident.
 9. Never invent a location, cause, victim, actor, timeline or relationship.
 10. No speculation about intent or guilt.
+11. When you say what people are discussing or complaining about, cite the
+    specific records [E<n>] it comes from and use words that appear in them. A
+    total count does not say what the posts are about. If no record supports a
+    theme, do not name one: say the evidence shows activity, not what it is about.
 
 PHRASING — follow the SHAPE of these forms, never their contents. Every
 <angle-bracketed> slot must be filled from the evidence below, and the period
@@ -480,7 +572,10 @@ The previous draft was rejected. Rewrite it, and this time:
   sentence; do not take a figure from one item and cite another;
 - name the period exactly as SCOPE gives it, or do not mention a period;
 - when you say what a breakdown contains, name the values listed under its
-  `rows`, spelled as they appear there.
+  `rows`, spelled as they appear there;
+- when you say what people are discussing or complaining about, cite the
+  specific records [E<n>] and use words that appear in them. If no record
+  supports a theme, do not name one.
 
 ANSWER:"""
 
@@ -552,7 +647,8 @@ def build(*, request_id: str, qplan: QueryPlan, eplan: ExecutionPlan, evidence: 
             for attempt in range(2):
                 draft = generate(prompt if attempt == 0 else prompt + _RETRY_NOTE,
                                  max_tokens=400, temperature=0.1)
-                cleaned, removed = check_claims(draft or "", evidence, qplan.raw_query, scope)
+                cleaned, removed = check_claims(draft or "", evidence, qplan.raw_query, scope,
+                                                themes=True)
                 total_sents = max(1, len(_SENT.split((draft or "").strip())))
                 if cleaned and removed <= total_sents / 3:
                     interpretation, generated_by = cleaned, "llm"
@@ -573,7 +669,7 @@ def build(*, request_id: str, qplan: QueryPlan, eplan: ExecutionPlan, evidence: 
     for e in evidence:
         if e.source_type == "situation":
             analysis["situation"] = e.facts
-    cited = {c for c in _CITE.findall(text + " " + (interpretation or ""))}
+    cited = set(_cite_ids(text + " " + (interpretation or "")))
     citations = [Citation(evidence_id=e.evidence_id,
                           label=(e.facts.get("handle") or e.facts.get("kind") or e.source_type),
                           url=e.url) for e in evidence if e.evidence_id in cited]
