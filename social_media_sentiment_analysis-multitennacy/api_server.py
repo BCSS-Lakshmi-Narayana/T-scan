@@ -222,6 +222,11 @@ app = FastAPI(
     title="Social Media Sentiment Analysis", version="1.2.0", lifespan=lifespan
 )
 
+# Only the backend may call this service. The backend already sends the key as
+# `x-api-key` when SENTIMENT_SERVICE_API_KEY is set; this is the other half.
+from service_auth import install_service_auth  # noqa: E402
+install_service_auth(app, "SENTIMENT_SERVICE_API_KEY", exempt=("/health",), logger=logger)
+
 
 class PolicyCategoryModel(BaseModel):
     id: str

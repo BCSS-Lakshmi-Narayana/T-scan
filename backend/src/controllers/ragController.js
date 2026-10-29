@@ -9,6 +9,17 @@ const ragApi = axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
+// The RAG service believes the tenant, role and districts in each request, so
+// it must know the request came from this backend. Unset keeps the old
+// behaviour for a loopback-only service; a service bound to a network must
+// have it, and the service itself refuses to start without one when
+// SERVICE_AUTH_REQUIRED=true.
+ragApi.interceptors.request.use((config) => {
+  const key = String(process.env.RAG_SERVICE_API_KEY || '').trim();
+  if (key) config.headers['x-api-key'] = key;
+  return config;
+});
+
 // Every RAG call MUST carry the caller's tenant_id so the Python service can scope
 // its MongoDB reads + vector retrieval to that tenant only (no cross-tenant answers).
 // Sent both as a header (X-Tenant-Id) and in the body/query for robustness.

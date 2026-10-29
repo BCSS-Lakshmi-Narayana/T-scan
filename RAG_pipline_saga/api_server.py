@@ -113,6 +113,10 @@ if _INGEST_REFUSED:
 # FastAPI app
 # ---------------------------------------------------------------------------
 app = FastAPI(title="RAG Pipeline API", version="1.0.0")
+# The caller is trusted to say who it is acting for (tenant, role, districts),
+# so the caller must prove it is the backend. See service_auth.py.
+from service_auth import install_service_auth  # noqa: E402
+install_service_auth(app, "RAG_SERVICE_API_KEY", exempt=("/api/rag/health",), logger=logger)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
