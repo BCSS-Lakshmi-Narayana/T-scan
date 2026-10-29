@@ -16,6 +16,14 @@ import os
 # production sentiment worker. The reranker degrades to pass-through.
 os.environ["RERANKER_ENABLED"] = "false"
 
+# Tests must never inherit the production service key. On the deployment
+# server .env sets one with SERVICE_AUTH_REQUIRED=true, so every endpoint test
+# got 401 from the real check -- correct behaviour, wrong configuration. Set
+# here, these win: load_dotenv() never overrides a variable already present.
+# test_service_auth.py tests the check itself with its own settings.
+os.environ["RAG_SERVICE_API_KEY"] = ""
+os.environ["SERVICE_AUTH_REQUIRED"] = "false"
+
 import pytest
 
 
