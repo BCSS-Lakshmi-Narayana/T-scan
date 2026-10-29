@@ -30,7 +30,9 @@ import llm_client
 # Configuration
 # ---------------------------------------------------------------------------
 
-load_dotenv()
+# An explicit path: with none, load_dotenv() locates .env from the calling
+# Python frame, and compiled code has no frame, so it found nothing.
+load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
 
 MONGODB_URI = os.getenv("MONGODB_URI", "mongodb://localhost:27017")
 DB_NAME = os.getenv("DB_NAME", "your_db")

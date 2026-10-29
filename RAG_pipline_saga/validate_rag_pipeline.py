@@ -35,7 +35,9 @@ from typing import Dict, List, Optional
 import requests
 from dotenv import load_dotenv
 
-load_dotenv()
+# An explicit path: with none, load_dotenv() locates .env from the calling
+# Python frame, and compiled code has no frame, so it found nothing.
+load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
 logging.basicConfig(level=logging.ERROR)
 
 from embedder import (EXPECTED_DIM, EmbeddingConfigError,   # noqa: E402

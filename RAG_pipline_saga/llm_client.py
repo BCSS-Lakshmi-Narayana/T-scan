@@ -27,7 +27,9 @@ from typing import List, Optional
 import requests
 from dotenv import load_dotenv
 
-load_dotenv()
+# An explicit path: with none, load_dotenv() locates .env from the calling
+# Python frame, and compiled code has no frame, so it found nothing.
+load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
 
 logger = logging.getLogger(__name__)
 

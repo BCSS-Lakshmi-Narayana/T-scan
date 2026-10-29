@@ -25,7 +25,9 @@ from dotenv import load_dotenv
 
 # Loads .env (e.g. HF_TOKEN for the gated IndicTrans2 model) into the process
 # environment — same load_dotenv() + os.getenv() convention as rag_pipeline.
-load_dotenv()
+# An explicit path: with none, load_dotenv() locates .env from the calling
+# Python frame, and compiled code has no frame, so it found nothing.
+load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
 
 # --------------------------------------------------------------------------- #
 # Paths — always resolved relative to this file (no hardcoded absolute paths).
