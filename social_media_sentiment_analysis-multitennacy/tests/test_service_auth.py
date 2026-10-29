@@ -117,6 +117,8 @@ class TestInstalling(unittest.TestCase):
                 install_service_auth(_FakeApp(), "X_KEY")
 
 
+@unittest.skipIf(os.environ.get("TSCAN_COMPILED_BUILD") == "1",
+                 "reads api_server.py; a compiled build has no source by design")
 class TestGuardRails(unittest.TestCase):
     def setUp(self):
         self.src = (ROOT / "api_server.py").read_text(encoding="utf-8")
