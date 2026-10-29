@@ -70,6 +70,7 @@ from typing import Any, Literal, Optional
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from fastapi import FastAPI, HTTPException
+import _compiled_compat  # noqa: F401  (before any pydantic model; see the module)
 from pydantic import BaseModel, Field
 
 import config  # loads .env (HF_TOKEN) via load_dotenv()

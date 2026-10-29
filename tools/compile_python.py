@@ -164,8 +164,13 @@ def main() -> int:
 def run_tests(src: Path, dst: Path) -> int:
     """Copy the tests in beside the build, run them, take them out again."""
     copied = []
+    if (src / "tests" / "__init__.py").exists():
+        (dst / "tests").mkdir(exist_ok=True)
+        shutil.copy2(src / "tests" / "__init__.py", dst / "tests" / "__init__.py")
+        copied.append(dst / "tests" / "__init__.py")
     for p in src.rglob("*.py"):
-        if any(part in SKIP_DIRS for part in p.relative_to(src).parts) or not is_test(p):
+        # tests/ is skipped when building, but it is where tests live here.
+        if any(part in SKIP_DIRS - {"tests"} for part in p.relative_to(src).parts) or not is_test(p):
             continue
         target = dst / p.relative_to(src)
         target.parent.mkdir(parents=True, exist_ok=True)
