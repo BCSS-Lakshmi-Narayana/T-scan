@@ -19,6 +19,7 @@ import logging
 from enum import Enum
 from typing import Dict, FrozenSet, List, Optional
 
+import _compiled_compat  # noqa: F401  (before any pydantic model; see the module)
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 logger = logging.getLogger(__name__)
@@ -187,7 +188,9 @@ def permissions_from_rbac(rbac_permissions: Optional[dict]) -> FrozenSet[str]:
     page is enabled. A disabled page grants nothing, whatever it lists.
     """
     out = set()
-    for page, grant in (rbac_permissions or {}).items():
+    # Bound first: iterating (x or {}).items() directly crashes the Cython compiler.
+    rbac_permissions = rbac_permissions or {}
+    for page, grant in rbac_permissions.items():
         if isinstance(grant, list):
             # The shape a caller reaches for by hand: {"/page": ["feature"]}.
             # It flattens to nothing, so every non-admin caller is denied and

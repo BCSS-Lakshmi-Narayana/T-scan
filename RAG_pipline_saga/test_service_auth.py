@@ -158,12 +158,14 @@ def test_a_blank_key_counts_as_missing():
 
 # -------------------------------------------------------------- guard rails
 
+@pytest.mark.reads_source
 def test_the_service_actually_installs_the_check():
     """A later edit that drops the call would silently reopen the service."""
     src = (Path(__file__).parent / "api_server.py").read_text(encoding="utf-8")
     assert re.search(r'install_service_auth\(\s*app\s*,\s*"RAG_SERVICE_API_KEY"', src)
 
 
+@pytest.mark.reads_source
 def test_only_health_is_exempt_in_the_service():
     src = (Path(__file__).parent / "api_server.py").read_text(encoding="utf-8")
     m = re.search(r"install_service_auth\([^)]*exempt=\(([^)]*)\)", src)

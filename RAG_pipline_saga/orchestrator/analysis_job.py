@@ -149,7 +149,9 @@ class AnalysisJob:
     def note_analysis(self, stats: dict) -> None:
         """Sum one population's model cost into the job's total."""
         with self.lock:
-            for key, value in (stats or {}).items():
+            # Bound first: iterating (x or {}).items() directly crashes the Cython compiler.
+            stats = stats or {}
+            for key, value in stats.items():
                 if isinstance(value, (int, float)):
                     self.analysis_stats[key] = round(
                         self.analysis_stats.get(key, 0) + value, 1)

@@ -1067,6 +1067,7 @@ class TestThemeClaimsNeedSupport:
         cleaned, removed = respond.check_claims(self.BAD + " [E1].", evs)
         assert removed == 0
 
+    @pytest.mark.reads_source
     def test_the_model_prose_path_turns_it_on(self):
         import inspect
         src = inspect.getsource(respond.build)

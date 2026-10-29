@@ -25,6 +25,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import Any, Dict, List, Literal, Optional, Union
 
+import _compiled_compat  # noqa: F401  (before any pydantic model; see the module)
 from pydantic import BaseModel, ConfigDict, Field
 
 from policy.models import Capability

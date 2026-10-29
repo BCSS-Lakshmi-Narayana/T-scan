@@ -14,6 +14,7 @@ import logging
 import os
 import sys
 import textwrap
+from datetime import datetime, timezone  # _save_checkpoint needs it at module level
 
 from dotenv import load_dotenv
 from tqdm import tqdm

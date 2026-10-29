@@ -18,6 +18,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from typing import List, Optional
 
+import _compiled_compat  # noqa: F401  (before any pydantic model; see the module)
 from pydantic import BaseModel, ConfigDict, Field
 
 import concepts as concept_mod

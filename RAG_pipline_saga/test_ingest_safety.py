@@ -313,12 +313,14 @@ def _run_ingest_source() -> str:
     return src[start:end]
 
 
+@pytest.mark.reads_source
 def test_the_ingest_path_no_longer_deletes_before_writing():
     body = _run_ingest_source()
     assert "delete_many" not in body, (
         "removal must go through prune_orphan_chunks after the write")
 
 
+@pytest.mark.reads_source
 def test_the_prune_is_recorded_on_every_written_document():
     """The record point must not sit under any `force` branch.
 
@@ -349,6 +351,7 @@ def test_the_prune_is_recorded_on_every_written_document():
         cur = parent
 
 
+@pytest.mark.reads_source
 def test_the_flush_prunes_after_upserting():
     body = _run_ingest_source()
     upsert_at = body.index("store.upsert_chunks(pending)")

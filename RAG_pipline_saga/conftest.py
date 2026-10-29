@@ -49,3 +49,13 @@ def pytest_collection_modifyitems(config, items):
         name = os.path.basename(str(item.fspath))
         for marker in by_file.get(name, ()):
             item.add_marker(getattr(pytest.mark, marker))
+
+    # A compiled build ships no source and no docstrings, by design. A test
+    # that reads either is guarding the source tree, not behaviour, and has
+    # nothing to read there; tools/compile_python.py sets this when it runs
+    # the suite against a build. In the source tree these tests still run.
+    if os.environ.get("TSCAN_COMPILED_BUILD") == "1":
+        skip = pytest.mark.skip(reason="reads source code; a compiled build has none by design")
+        for item in items:
+            if "reads_source" in item.keywords:
+                item.add_marker(skip)

@@ -29,6 +29,7 @@ import unicodedata
 from functools import lru_cache
 from typing import Dict, List, Optional, Tuple
 
+import _compiled_compat  # noqa: F401  (before any pydantic model; see the module)
 from pydantic import BaseModel, ConfigDict, Field
 
 _DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gazetteer_telangana.json")

@@ -996,6 +996,7 @@ class TestCollectionAllowList:
         import query_collections
         assert api_server.ALLOWED_QUERY_COLLECTIONS == query_collections.allowed_collections()
 
+    @pytest.mark.reads_source
     def test_the_live_validator_reads_the_shared_list(self):
         source = os.path.join(HERE, "validate_live.py")
         with open(source, encoding="utf-8") as fh:

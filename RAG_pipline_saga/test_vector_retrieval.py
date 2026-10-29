@@ -413,6 +413,7 @@ def test_a_zero_query_vector_returns_nothing_rather_than_dividing_by_zero():
 
 # ===================================================== embedder concurrency
 
+@pytest.mark.reads_source
 def test_the_embedder_serialises_inference():
     """The tokenizer is shared mutable state; the executor is multi-threaded.
 
@@ -439,6 +440,7 @@ def test_the_embedder_serialises_inference():
     assert lock < tok, "the tokenizer is called outside the lock"
 
 
+@pytest.mark.reads_source
 def test_the_load_lock_is_not_held_during_inference():
     # Holding the load lock across encode would serialise every request behind
     # a model load for no reason.

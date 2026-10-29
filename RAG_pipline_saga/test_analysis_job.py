@@ -183,6 +183,7 @@ def test_the_worker_count_is_read_from_the_environment(monkeypatch):
     J.assert_single_worker()                      # unreadable -> assume one
 
 
+@pytest.mark.reads_source
 def test_the_requirement_is_stated_not_just_enforced():
     assert J.SINGLE_WORKER_REQUIRED is True
     assert "process" in (J.assert_single_worker.__doc__ or "").lower()

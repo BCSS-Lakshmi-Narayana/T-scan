@@ -35,6 +35,7 @@ from fastapi import FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
+import _compiled_compat  # noqa: F401  (before any pydantic model; see the module)
 from pydantic import BaseModel
 from pymongo import MongoClient, DESCENDING
 from starlette.middleware.wsgi import WSGIMiddleware

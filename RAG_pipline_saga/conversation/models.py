@@ -27,6 +27,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Any, List, Optional
 
+import _compiled_compat  # noqa: F401  (before any pydantic model; see the module)
 from pydantic import BaseModel, ConfigDict, Field
 
 from query_understanding.models import (Ambiguity, Concept, Entity, Filter,
