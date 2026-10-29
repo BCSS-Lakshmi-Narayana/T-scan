@@ -156,9 +156,15 @@ def main() -> int:
     for p in left:
         print("   ", p)
 
+    # A module that did not compile is still readable source. Shipping it would
+    # defeat the build, so stop here rather than let a passing test run carry
+    # it through: deploy_spark.sh treats any failure as "do not swap in".
+    if failed:
+        print("\nREFUSING TO CONTINUE: the build would contain readable source.")
+        return 1
     if a.test:
         return run_tests(src, dst)
-    return 1 if failed else 0
+    return 0
 
 
 def run_tests(src: Path, dst: Path) -> int:
