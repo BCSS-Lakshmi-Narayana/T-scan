@@ -34,7 +34,9 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 SKIP_DIRS = {".venv", "venv", "__pycache__", ".pytest_cache", ".vector_cache", "outputs",
-             "reports", ".logs", "tests", "build", ".git", "node_modules"}
+             "reports", ".logs", "tests", "build", ".git", "node_modules", "docs"}
+# Not shipped either: docs and laptop-only scripts.
+SKIP_SUFFIXES = {".pyc", ".pyo", ".c", ".so", ".pyd", ".md", ".ps1"}
 
 # Python semantics, not Cython's. annotation_typing=False matters most: by
 # default Cython turns "x: int" into an enforced C type and changes behaviour.
@@ -76,7 +78,7 @@ def copy_tree(src: Path, dst: Path) -> None:
         rel = Path(root).relative_to(src)
         for f in files:
             p = Path(root) / f
-            if p.suffix in (".pyc", ".pyo", ".c", ".so", ".pyd") or is_test(p):
+            if p.suffix in SKIP_SUFFIXES or is_test(p):
                 continue
             (dst / rel).mkdir(parents=True, exist_ok=True)
             shutil.copy2(p, dst / rel / f)

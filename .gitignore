@@ -70,3 +70,13 @@ frontend/build/
 *.npy
 .cache/
 **/.cache/
+
+# The operations guide holds live passwords and keys. It stays in this folder
+# and never goes to git. Any file named *-PRIVATE.md is covered.
+*-PRIVATE.md
+
+# Documentation stays on the laptop; the servers get code only.
+*.md
+docs/
+**/docs/
+SERVER-REQUIREMENTS.html
