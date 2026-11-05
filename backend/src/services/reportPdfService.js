@@ -241,4 +241,4 @@ ${bodyHtml}
     }
 };
 
-module.exports = { renderReportPdf };
+module.exports = { renderReportPdf, getBrowser, escapeHtml };

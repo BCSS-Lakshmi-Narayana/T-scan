@@ -19,6 +19,10 @@ const tweetSnapshotSchema = new mongoose.Schema({
   created_at: { type: Date, default: null },
   content_url: { type: String, default: '' },
   retweet_count: { type: Number, default: 0 },
+  like_count: { type: Number, default: 0 },
+  reply_count: { type: Number, default: 0 },
+  quote_count: { type: Number, default: 0 },
+  view_count: { type: Number, default: 0 },
   retweeters_found: { type: Number, default: 0 }
 }, { _id: false });
 

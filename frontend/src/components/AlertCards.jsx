@@ -1,7 +1,7 @@
 
 import React, { useState, useRef, useEffect, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MessageCircle, Repeat, Heart, BarChart2, MoreHorizontal, Share, CheckCircle2, ThumbsUp, Eye, ExternalLink, MessageSquare, Zap, Info, X, AlertTriangle, Shield, ShieldCheck, Download, Loader2, FileText, Share2, Check, XCircle, AlertCircle, FilePlus, ChevronDown, ChevronRight, Image, Video, Pause, Play, Plus, Twitter, Instagram, Facebook, Users, Trash2, Clock, Globe, Network, UserPlus, CalendarDays, Search, Tags, MapPin, HelpCircle } from 'lucide-react';
+import { MessageCircle, Repeat, Heart, BarChart2, MoreHorizontal, Share, CheckCircle2, ThumbsUp, Eye, ExternalLink, MessageSquare, Zap, Info, X, AlertTriangle, Shield, ShieldCheck, Download, Loader2, FileText, Share2, Check, XCircle, AlertCircle, FilePlus, ChevronDown, ChevronRight, Image, Video, Pause, Play, Plus, Twitter, Instagram, Facebook, Users, Trash2, Clock, Globe, Network, UserPlus, CalendarDays, Search, Tags, MapPin, HelpCircle, FileSpreadsheet } from 'lucide-react';
 import { formatDistanceToNow, format, startOfDay, startOfWeek, endOfDay } from 'date-fns';
 
 import { ScrollArea } from './ui/scroll-area';
@@ -2422,6 +2422,125 @@ const RetweetNetworkDialog = ({ open, onOpenChange, sourceId, sourceHandle, sour
     );
 };
 
+/* ── Engager report download (PDF / Excel) for one analysis ── */
+// '' for a missing or invalid date, so a render never throws on bad data.
+const istDayOf = (d) => {
+    const ms = new Date(d).getTime();
+    return Number.isFinite(ms) ? new Date(ms + 5.5 * 60 * 60 * 1000).toISOString().slice(0, 10) : '';
+};
+const shiftDay = (day, n) => (day ? istDayOf(new Date(`${day}T12:00:00+05:30`).getTime() + n * 86400000) : '');
+
+// A failed blob request carries its JSON error as a Blob.
+const blobError = async (err, fallback) => {
+    try { return JSON.parse(await err?.response?.data?.text())?.error || fallback; } catch { return fallback; }
+};
+
+const EngagerReportButton = ({ analysis }) => {
+    const [open, setOpen] = useState(false);
+    const [from, setFrom] = useState('');
+    const [to, setTo] = useState('');
+    const [busy, setBusy] = useState(null);   // 'pdf' | 'xlsx'
+
+    const dated = (analysis?.tweets || []).filter(t => t.created_at && Number.isFinite(new Date(t.created_at).getTime()));
+    const minDay = dated.length ? istDayOf(Math.min(...dated.map(t => new Date(t.created_at).getTime()))) : '';
+    const maxDay = dated.length ? istDayOf(Math.max(...dated.map(t => new Date(t.created_at).getTime()))) : '';
+
+    useEffect(() => {
+        if (open) { setFrom(minDay); setTo(maxDay); }
+    }, [open]);   // eslint-disable-line react-hooks/exhaustive-deps
+
+    // Days the analysis covers; a preset as long as that is the same as Full range.
+    const coveredDays = minDay && maxDay ? Math.round((new Date(maxDay) - new Date(minDay)) / 86400000) + 1 : 0;
+    const presetFrom = (days) => {
+        if (!days || !maxDay) return minDay;
+        const start = shiftDay(maxDay, -(days - 1));
+        return start < minDay ? minDay : start;
+    };
+    const presets = [['Full range', 0], ['Last day', 1], ['Last 3 days', 3], ['Last 7 days', 7], ['Last 30 days', 30]]
+        .map(([label, days]) => ({ label, days, usable: days === 0 || days < coveredDays, active: to === maxDay && from === presetFrom(days) }));
+    const rangeValid = from && to && from <= to && from >= minDay && to <= maxDay;
+
+    const download = async (format) => {
+        setBusy(format);
+        try {
+            const res = await api.get(`/x/engager-analysis/${analysis.id}/report`, {
+                params: { format, from, to }, responseType: 'blob'
+            });
+            const url = window.URL.createObjectURL(new Blob([res.data], { type: res.headers?.['content-type'] }));
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `Engager_Report_${analysis.handle}_${from}_${to}.${format}`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+            toast.success(`${format === 'pdf' ? 'PDF' : 'Excel'} report downloaded`);
+        } catch (err) {
+            toast.error(await blobError(err, 'Failed to generate the report'));
+        } finally { setBusy(null); }
+    };
+
+    if (!analysis?.id || analysis.status !== 'completed') return null;
+
+    return (
+        <Popover open={open} onOpenChange={setOpen}>
+            <PopoverTrigger asChild>
+                <Button size="sm" variant="outline" className="h-7 text-[10px] px-2.5 gap-1.5">
+                    <FileText className="h-3 w-3" /> Report
+                </Button>
+            </PopoverTrigger>
+            <PopoverContent align="end" className="w-80 p-3 space-y-3">
+                <div>
+                    <div className="text-xs font-semibold">Engager analysis report</div>
+                    <div className="text-[10px] text-muted-foreground">@{analysis.handle} · posts from {minDay || '—'} to {maxDay || '—'}</div>
+                </div>
+                {!dated.length ? (
+                    <p className="text-[11px] text-muted-foreground">This analysis has no dated posts to report on. Re-analyze the account first.</p>
+                ) : (
+                    <>
+                        <div className="grid grid-cols-2 gap-2">
+                            <label className="text-[10px] text-muted-foreground space-y-1">
+                                <span>From</span>
+                                <input type="date" value={from} min={minDay} max={to || maxDay} onChange={(e) => setFrom(e.target.value)}
+                                    className="w-full px-2 py-1 text-[11px] rounded border bg-background focus:outline-none focus:ring-1 focus:ring-primary" />
+                            </label>
+                            <label className="text-[10px] text-muted-foreground space-y-1">
+                                <span>To</span>
+                                <input type="date" value={to} min={from || minDay} max={maxDay} onChange={(e) => setTo(e.target.value)}
+                                    className="w-full px-2 py-1 text-[11px] rounded border bg-background focus:outline-none focus:ring-1 focus:ring-primary" />
+                            </label>
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                            {presets.map(p => (
+                                <Button key={p.label} size="sm" variant={p.active && p.usable ? 'default' : 'outline'} className="h-6 text-[9px] px-2"
+                                    disabled={!p.usable}
+                                    title={p.usable ? undefined : `This analysis only covers ${coveredDays} day${coveredDays === 1 ? '' : 's'}`}
+                                    onClick={() => { setFrom(presetFrom(p.days)); setTo(maxDay); }}>
+                                    {p.label}
+                                </Button>
+                            ))}
+                        </div>
+                        <p className="text-[9px] text-muted-foreground">
+                            This analysis covers {coveredDays} day{coveredDays === 1 ? '' : 's'}. Each analysis fetches the account's posts from the
+                            last {analysis.period_days || 30} days (up to 1,500). Re-analyze to extend an older analysis.
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-2">
+                            <Button size="sm" className="h-8 text-[11px] gap-1.5" onClick={() => download('pdf')} disabled={!rangeValid || busy !== null}>
+                                {busy === 'pdf' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Download className="h-3.5 w-3.5" />} PDF
+                            </Button>
+                            <Button size="sm" variant="outline" className="h-8 text-[11px] gap-1.5" onClick={() => download('xlsx')} disabled={!rangeValid || busy !== null}>
+                                {busy === 'xlsx' ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <FileSpreadsheet className="h-3.5 w-3.5" />} Excel
+                            </Button>
+                        </div>
+                        {!rangeValid && from && to && <p className="text-[9px] text-red-600">Pick dates between {minDay} and {maxDay}, with From before To.</p>}
+                    </>
+                )}
+            </PopoverContent>
+        </Popover>
+    );
+};
+
 /* ── Frequent Engagers Panel (top-bar dialog) ── */
 export const FrequentEngagersDialog = ({ open, onOpenChange, onAddSource, monitoredHandles = [] }) => {
     const [analyses, setAnalyses] = useState([]);
@@ -2673,6 +2792,9 @@ export const FrequentEngagersDialog = ({ open, onOpenChange, onAddSource, monito
                                         <h2 className="text-sm font-semibold">@{selectedHandle}</h2>
                                         {analysis && <p className="text-[10px] text-muted-foreground">{analysis.tweets_analyzed} tweets · {analysis.unique_retweeters} engagers · {analysis.period_days}-day window</p>}
                                     </div>
+                                </div>
+                                <div className="ml-auto shrink-0">
+                                    <EngagerReportButton analysis={analysis} />
                                 </div>
                             </div>
                         </div>

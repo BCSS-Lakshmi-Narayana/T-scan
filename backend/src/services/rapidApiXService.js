@@ -758,7 +758,8 @@ const fetchAllUserTweetsSince = async (handle, sinceDate, maxTweets = 200) => {
         let profileImageUrl = cachedMeta?.profileImageUrl || null;
 
         const tweets = [];
-        const maxPages = 10; // safety cap
+        // Safety cap. A page holds ~15-20 posts, so this follows maxTweets (10 pages for the default 200).
+        const maxPages = Math.max(10, Math.ceil(maxTweets / 15));
 
         for (const endpoint of endpoints) {
             let cursor = null;

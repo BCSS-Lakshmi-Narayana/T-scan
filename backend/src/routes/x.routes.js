@@ -19,9 +19,11 @@ const {
     getPendingCount,
     getAllAnalyses
 } = require('../services/engagerAnalysisService');
+const { buildReportData, coverage, parseIstDate, istDay } = require('../services/engagerReportService');
+const { renderReportPdf: renderEngagerReportPdf, buildReportWorkbook: buildEngagerReportWorkbook } = require('../services/engagerReportRender');
 const AuditLog = require('../models/AuditLog');
 const { protect } = require('../middleware/authMiddleware');
-const { requireAnyPageAccess } = require('../middleware/rbacMiddleware');
+const { requireAnyPageAccess, requireFeatureAccess } = require('../middleware/rbacMiddleware');
 
 router.use(protect, requireAnyPageAccess(['/x-monitor']));
 
@@ -324,6 +326,59 @@ router.get('/engager-analysis/history', async (req, res) => {
         return res.json({ handle, analyses: history });
     } catch (error) {
         return res.status(500).json({ error: 'Failed to fetch analysis history', message: error.message });
+    }
+});
+
+// Download a report of a completed analysis.
+// ?format=pdf|xlsx&from=YYYY-MM-DD&to=YYYY-MM-DD (IST days, inside the analysed range)
+const engagerReportAccess = requireFeatureAccess('/alerts', 'frequent_engagers');
+
+router.get('/engager-analysis/:id/report', engagerReportAccess, async (req, res) => {
+    try {
+        if (!req.tenantId) return res.status(403).json({ error: 'No tenant in scope' });
+        const format = String(req.query.format || 'pdf').toLowerCase();
+        if (!['pdf', 'xlsx'].includes(format)) return res.status(400).json({ error: 'format must be pdf or xlsx' });
+
+        const analysis = await getAnalysisById(req.params.id, req.tenantId);
+        if (!analysis) return res.status(404).json({ error: 'Analysis not found' });
+        if (analysis.status !== 'completed') return res.status(409).json({ error: 'The analysis has not completed' });
+
+        const cov = coverage(analysis);
+        if (!cov) return res.status(422).json({ error: 'The analysis has no dated posts to report on' });
+        const minDay = istDay(cov.start);
+        const maxDay = istDay(cov.end);
+        const from = req.query.from ? parseIstDate(req.query.from) : parseIstDate(minDay);
+        const to = req.query.to ? parseIstDate(req.query.to, true) : parseIstDate(maxDay, true);
+        if (!from || !to) return res.status(400).json({ error: 'from and to must be YYYY-MM-DD' });
+        if (from > to) return res.status(400).json({ error: 'from must not be after to' });
+        if (from < parseIstDate(minDay) || to > parseIstDate(maxDay, true)) {
+            return res.status(400).json({
+                error: `The analysis covers ${minDay} to ${maxDay}. Run a new analysis for a wider period.`,
+                coverage: { from: minDay, to: maxDay }
+            });
+        }
+
+        const data = buildReportData(analysis, { from, to });
+        const meta = { generatedBy: req.user?.full_name || req.user?.name || req.user?.email, generatedAt: new Date() };
+        const name = `Engager_Report_${analysis.handle}_${istDay(from)}_${istDay(to)}`;
+
+        let body;
+        if (format === 'pdf') {
+            body = await renderEngagerReportPdf(data, meta);
+            res.setHeader('Content-Type', 'application/pdf');
+        } else {
+            body = Buffer.from(await buildEngagerReportWorkbook(data, meta));
+            res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        }
+        await logAction(req.user, 'download_engager_report', 'engager_analysis', analysis.id, {
+            handle: analysis.handle, format, from: istDay(from), to: istDay(to)
+        });
+        res.setHeader('Content-Disposition', `attachment; filename="${name}.${format}"`);
+        res.setHeader('Content-Length', body.length);
+        return res.end(body);
+    } catch (error) {
+        console.error('[EngagerReport] Error:', error.message);
+        return res.status(500).json({ error: 'Failed to generate the report', message: error.message });
     }
 });
 

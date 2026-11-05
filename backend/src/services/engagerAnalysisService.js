@@ -1,8 +1,15 @@
 const { v4: uuidv4 } = require('uuid');
 const EngagerAnalysis = require('../models/EngagerAnalysis');
 const rapidApiXService = require('./rapidApiXService');
+const { frequencyFor, mergeSnapshots, dropOlderThan } = require('./engagerSnapshots');
 
 const normalizeHandle = (value) => String(value || '').replace(/^@/, '').trim().toLowerCase();
+const num = (v) => Number(v) || 0;
+
+const MAX_POSTS = 1500;                 // a full 30 days of a very active account (~45 posts/day)
+const MAX_TWEETS_FOR_RETWEETERS = 100;  // one retweeter call per post
+const STALE_MS = 30 * 60 * 1000;        // a run is up to ~100 post pages + 100 retweeter calls
+const KEEP_DAYS = 90;                   // older posts from earlier runs are dropped (16 MB document limit)
 
 /**
  * Prepare an analysis record synchronously (check conflicts, create/update DB record).
@@ -14,9 +21,9 @@ const prepareAnalysisRecord = async (handle, { periodDays = 30, sourceId = null,
   if (!cleanHandle) throw new Error('handle is required');
   if (!tenantId) throw new Error('tenantId is required');
 
-  // Reset this tenant's stuck "processing" records older than 10 minutes
+  // Reset this tenant's stuck "processing" records older than STALE_MS
   await EngagerAnalysis.updateMany(
-    { tenant_id: tenantId, status: 'processing', analyzed_at: { $lt: new Date(Date.now() - 10 * 60 * 1000) } },
+    { tenant_id: tenantId, status: 'processing', analyzed_at: { $lt: new Date(Date.now() - STALE_MS) } },
     { $set: { status: 'failed', error: 'Analysis timed out' } }
   );
 
@@ -95,7 +102,7 @@ const executeAnalysisWork = async (analysisId, cleanHandle, periodDays, analysis
     
     let result;
     try {
-      result = await rapidApiXService.fetchAllUserTweetsSince(cleanHandle, cutoff, 200);
+      result = await rapidApiXService.fetchAllUserTweetsSince(cleanHandle, cutoff, MAX_POSTS);
     } catch (fetchErr) {
       console.error(`[EngagerAnalysis] Tweet fetch threw for @${cleanHandle}:`, fetchErr.message);
       await EngagerAnalysis.updateOne({ _id: analysisId }, { $set: { status: 'failed', error: `Tweet fetch failed: ${fetchErr.message}` } });
@@ -153,14 +160,13 @@ const executeAnalysisWork = async (analysisId, cleanHandle, periodDays, analysis
     const tweetSnapshots = [];
     let totalRetweetEvents = 0;
 
-    // Sort tweets by retweet count (highest first) and cap at 40 tweets for retweeter fetching
-    // This prevents 200+ API calls for very active accounts
-    const MAX_TWEETS_FOR_RETWEETERS = 40;
+    // Retweeters are fetched only for the most-retweeted posts (one API call each).
     const sortedTweets = [...periodTweets].sort((a, b) => {
       const rtA = Number(a?.metrics?.retweets || a?.metrics?.retweet || a?.engagement?.retweets || 0);
       const rtB = Number(b?.metrics?.retweets || b?.metrics?.retweet || b?.engagement?.retweets || 0);
       return rtB - rtA;
     });
+    const topTweets = new Set(sortedTweets.slice(0, MAX_TWEETS_FOR_RETWEETERS));
 
     let retweeterFetchCount = 0;
 
@@ -169,8 +175,10 @@ const executeAnalysisWork = async (analysisId, cleanHandle, periodDays, analysis
       if (!tweetId) continue;
 
       const retweetCount = Number(tweet?.metrics?.retweets || tweet?.metrics?.retweet || tweet?.engagement?.retweets || 0);
-      const tweetText = String(tweet?.text || tweet?.full_text || '').substring(0, 280);
+      // Long posts are kept whole enough to read in the report.
+      const tweetText = String(tweet?.text || tweet?.full_text || '').substring(0, 1000);
       const tweetUrl = tweet?.url || `https://x.com/${cleanHandle}/status/${tweetId}`;
+      const m = tweet?.metrics || {};
 
       const snapshot = {
         tweet_id: tweetId,
@@ -178,13 +186,15 @@ const executeAnalysisWork = async (analysisId, cleanHandle, periodDays, analysis
         created_at: tweet?.created_at ? new Date(tweet.created_at) : null,
         content_url: tweetUrl,
         retweet_count: retweetCount,
+        like_count: num(m.like ?? m.likes),
+        reply_count: num(m.reply ?? m.replies),
+        quote_count: num(m.quote ?? m.quotes),
+        view_count: num(m.views),
         retweeters_found: 0
       };
 
       if (retweetCount > 0 && retweeterFetchCount < MAX_TWEETS_FOR_RETWEETERS) {
-        // Check if this tweet is in the top N by retweet count (worth fetching)
-        const isTopTweet = sortedTweets.indexOf(tweet) < MAX_TWEETS_FOR_RETWEETERS;
-        if (isTopTweet) {
+        if (topTweets.has(tweet)) {
           retweeterFetchCount++;
           console.log(`[EngagerAnalysis] Fetching retweeters for tweet ${retweeterFetchCount}/${MAX_TWEETS_FOR_RETWEETERS}: ${tweetId} (${retweetCount} RTs)`);
           try {
@@ -223,36 +233,19 @@ const executeAnalysisWork = async (analysisId, cleanHandle, periodDays, analysis
     }
 
     // 4. Build frequency hierarchy
-    const allTweetSnapshots = [
-      // Keep old tweet snapshots that aren't in the new batch
-      ...(analysis.tweets || []).filter(t => !tweetSnapshots.some(ns => ns.tweet_id === String(t.tweet_id))).map(t => ({
-        tweet_id: String(t.tweet_id),
-        text: t.text,
-        created_at: t.created_at,
-        content_url: t.content_url,
-        retweet_count: t.retweet_count,
-        retweeters_found: t.retweeters_found
-      })),
-      ...tweetSnapshots
-    ];
+    const keepSince = new Date(Date.now() - KEEP_DAYS * 24 * 60 * 60 * 1000);
+    const allTweetSnapshots = dropOlderThan(mergeSnapshots(analysis.tweets || [], tweetSnapshots), keepSince);
+    const keptIds = new Set(allTweetSnapshots.map((t) => String(t.tweet_id)));
     const totalTweetsAnalyzed = allTweetSnapshots.length;
     const engagers = [];
     const summaryCount = { 'super-active': 0, regular: 0, occasional: 0, 'one-time': 0 };
 
     for (const [, entry] of engagerMap) {
+      // Retweets of dropped posts no longer count; an engager left with none is dropped.
+      entry.tweet_ids = new Set([...entry.tweet_ids].filter((id) => keptIds.has(String(id))));
+      if (!entry.tweet_ids.size) continue;
       const tweetsRetweeted = entry.tweet_ids.size;
-      const ratio = totalTweetsAnalyzed > 0 ? tweetsRetweeted / totalTweetsAnalyzed : 0;
-
-      let frequency;
-      if (ratio >= 0.5 || tweetsRetweeted >= 10) {
-        frequency = 'super-active';
-      } else if (ratio >= 0.25 || tweetsRetweeted >= 5) {
-        frequency = 'regular';
-      } else if (tweetsRetweeted >= 2) {
-        frequency = 'occasional';
-      } else {
-        frequency = 'one-time';
-      }
+      const frequency = frequencyFor(tweetsRetweeted, totalTweetsAnalyzed);
 
       summaryCount[frequency] = (summaryCount[frequency] || 0) + 1;
 
@@ -280,7 +273,7 @@ const executeAnalysisWork = async (analysisId, cleanHandle, periodDays, analysis
     analysis.status = 'completed';
     analysis.tweets_analyzed = totalTweetsAnalyzed;
     analysis.total_retweet_events = totalRetweetEvents;
-    analysis.unique_retweeters = engagerMap.size;
+    analysis.unique_retweeters = engagers.length;
     analysis.summary = {
       super_active: summaryCount['super-active'],
       regular: summaryCount['regular'],
@@ -292,7 +285,7 @@ const executeAnalysisWork = async (analysisId, cleanHandle, periodDays, analysis
     analysis.error = null;
     await analysis.save();
 
-    console.log(`[EngagerAnalysis] Completed for @${cleanHandle}: ${totalTweetsAnalyzed} tweets, ${engagerMap.size} unique retweeters, ${totalRetweetEvents} total retweet events`);
+    console.log(`[EngagerAnalysis] Completed for @${cleanHandle}: ${totalTweetsAnalyzed} tweets, ${engagers.length} unique retweeters, ${totalRetweetEvents} total retweet events`);
     return analysis.toObject();
   } catch (err) {
     console.error(`[EngagerAnalysis] Failed for @${cleanHandle}:`, err.message, err.stack);
@@ -365,12 +358,12 @@ const getAnalyzedHandles = async (tenantId) => {
 
 /**
  * Get count of currently processing analyses.
- * Also resets any stuck processing records older than 10 minutes.
+ * Also resets any stuck processing records older than STALE_MS.
  */
 const getPendingCount = async (tenantId) => {
   // Auto-cleanup this tenant's stuck processing records
   await EngagerAnalysis.updateMany(
-    { tenant_id: tenantId, status: 'processing', analyzed_at: { $lt: new Date(Date.now() - 10 * 60 * 1000) } },
+    { tenant_id: tenantId, status: 'processing', analyzed_at: { $lt: new Date(Date.now() - STALE_MS) } },
     { $set: { status: 'failed', error: 'Analysis timed out' } }
   );
   return EngagerAnalysis.countDocuments({ tenant_id: tenantId, status: 'processing' });
