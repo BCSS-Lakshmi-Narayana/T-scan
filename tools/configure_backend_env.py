@@ -16,6 +16,10 @@ What it changes, and why:
                                          falls back to this; the old value named
                                          a tenant that is not in this database
   NODE_ENV                               production
+  COLLECTION_ENABLED                     false. The first start would otherwise scan
+                                         every source at once and spend API quota
+                                         before anyone has seen the app work. Set it
+                                         to true, and restart, when collection should begin
 
 What it deliberately leaves alone:
 
@@ -68,6 +72,9 @@ def build_updates(origin: str) -> dict[str, str]:
         "CORS_ORIGINS": f'"{origin}"',
         "DEFAULT_TENANT_SLUG": TENANT_SLUG,
         "NODE_ENV": "production",
+        # Collection from the social platforms stays OFF until it is turned on on
+        # purpose. Without this the first start scans hundreds of sources at once.
+        "COLLECTION_ENABLED": "false",
     }
 
 
