@@ -654,4 +654,11 @@ const startServer = async () => {
   });
 };
 
-startServer();
+// TSCAN_BOOT=off lets the compiled build be loaded for a smoke test (verifying the
+// bytecode is valid for this Node version) without connecting to the database,
+// starting collection, or listening. Unset in normal operation, so it boots.
+if (process.env.TSCAN_BOOT !== 'off') {
+  startServer();
+} else {
+  console.log('[Server] TSCAN_BOOT=off — module graph loaded, not starting the server.');
+}

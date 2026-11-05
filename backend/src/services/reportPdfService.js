@@ -217,11 +217,9 @@ ${bodyHtml}
             timeout: 60000,
         });
 
-        await page.evaluate(async () => {
-            if (document.fonts && document.fonts.ready) {
-                await document.fonts.ready;
-            }
-        });
+        // Passed as a string, not a function: once compiled to bytecode a function's
+        // source is replaced by filler, so page.evaluate(fn) would ship that to the browser.
+        await page.evaluate('document.fonts && document.fonts.ready ? document.fonts.ready : null');
 
         const footer = `<div style="font-size:9px;width:100%;padding:0 20mm;color:#333;text-align:right;font-family:Arial,sans-serif;-webkit-print-color-adjust:exact;">RefNo:${escapeHtml(serialNumber)}</div>`;
 

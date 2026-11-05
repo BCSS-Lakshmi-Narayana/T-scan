@@ -60,6 +60,11 @@ Thumbs.db
 # Built output — rebuild from source instead of committing it.
 frontend/build/
 
+# Local compile dry-run / scratch build output.
+build-dry/
+**/build-dry/
+*.jsc
+
 # Model weights and caches. These are gigabytes and come from their own
 # registries; a git repository is the wrong place for them.
 *.safetensors
